@@ -4,7 +4,10 @@ import time
 import requests
 import json
 import pandas as pd
-from testingAPIKeyValidity import testKeys
+from utility.testingAPIKeyValidity import testKeys
+
+
+# TODO add VENV -> Virtual Environment
 
 
 # remove all spaces from a string then make it lowercase
@@ -70,9 +73,20 @@ def convertDateToTimestamp(date, currYear):
     return int(datetime.datetime(currYear, monthNum, day).timestamp())
 
 
+# make a method called save_data_to_json that takes a param called data and is a dctionary, this method so that if any of the values are none or NaN, skip over that entry
 def save_data_to_json(data):
+    # create a new dictionary that will be returned at the end of the method
+    newDict = {}
+    # loop through all the keys in the data dictionary
+    for key in data:
+        # if the value of the key is not none or NaN, add it to the newDict
+        if data[key] == None or data[key] == "NaN":
+            newDict[key] = "viewentry"
+        else:
+            newDict[key] = data[key]
+    # save the newDict to the weather_data.json file
     with open("weather_data.json", "w") as outfile:
-        json.dump(data, outfile, indent=4, sort_keys=True)
+        json.dump(newDict, outfile, indent=4, sort_keys=True)
 
 
 # TODO add more api keys
@@ -86,10 +100,9 @@ preTestapiKeys = [
     "d630ce2596a01ed25c9c92efa16b02bb",
 ]
 
-postTestAPIKeys = testKeys(preTestapiKeys)
-
 
 def main(apiKeys):
+    apiKeys = testKeys(apiKeys)
     try:
         apiKey = apiKeys.pop()
 
@@ -104,11 +117,15 @@ def main(apiKeys):
             "2019.xlsx",
             "2020.xlsx",
             "2021.xlsx",
+            "2022.xlsx",
+            "2023.xlsx",
         ]
+        # reverse the file path in place
+        file_paths.reverse()
 
         # open the file shelter_data.json and convert it into a python dictionary
         print("Loading shelter data...")
-        with open("shelter_data.json") as json_file:
+        with open("inputData/shelter_data.json") as json_file:
             shelter_data = json.load(json_file)
         print("Shelter data loaded.")
 
@@ -121,7 +138,8 @@ def main(apiKeys):
         df = pd.DataFrame()
         print("Loading excel files...")
         for file_path in file_paths:
-            data = pd.read_excel(file_path)
+            relative_file_path = "inputData/" + file_path
+            data = pd.read_excel(relative_file_path)
             data["year"] = file_path.split(".")[0]
             df = pd.concat([df, data])
             if file_path == "2016.xlsx":
@@ -164,18 +182,6 @@ def main(apiKeys):
         count = 0
         alreadyCounted = 0
         invalid = 0
-        # # print the entire frames column names and row count
-        # print(df.columns)
-        # print("df longitude == ")
-        # print("")
-        # print("")
-        # print(df["longitude"])
-        # print(len(df))
-        # # print the number of rows with a longitude and latitude that are not null
-        # print(len(df[df["longitude"].notnull()]))
-        # # rename the "Date" row in the df to "date"
-        # print(df.columns)
-        # time.sleep(10)
 
         # # loop through all the rows in the data frame, if the longitude and latitude are not null then add the weather data to the weather_data dictionary, using the openweather api, if added print the destination and the weather data, use the time from the excel file
         for index, row in df.iterrows():
@@ -340,4 +346,4 @@ def main(apiKeys):
         raise  # Re-raise the exception to terminate the program
 
 
-main(postTestAPIKeys)
+main(preTestapiKeys)

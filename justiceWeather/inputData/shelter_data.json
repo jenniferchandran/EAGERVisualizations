@@ -1,0 +1,1322 @@
+{
+  "Amicalola Falls State Park": {
+    "cordinates": {
+      "longitude": -84.24763,
+      "latitude": 34.56265
+    }
+  },
+  "Max Epperson Shelter": {
+    "cordinates": {
+      "longitude": -84.19298,
+      "latitude": 34.62927
+    }
+  },
+  "Black Gap Shelter": {
+    "cordinates": {
+      "longitude": -84.1988,
+      "latitude": 34.61756
+    }
+  },
+  "Springer Mountain": {
+    "cordinates": {
+      "longitude": -84.1936,
+      "latitude": 34.6267
+    }
+  },
+  "Springer Mountain Shelter": {
+    "cordinates": {
+      "longitude": -84.1931,
+      "latitude": 34.62915
+    }
+  },
+  "Stover Creek Shelter": {
+    "cordinates": {
+      "longitude": -84.1999,
+      "latitude": 34.64945
+    }
+  },
+  "Hawk Mountain Shelter": {
+    "cordinates": {
+      "longitude": -84.1364,
+      "latitude": 34.66583
+    }
+  },
+  "Gooch Mountain Shelter": {
+    "cordinates": {
+      "longitude": -84.0343,
+      "latitude": 34.6532
+    }
+  },
+  "Woods Hole Shelter": {
+    "cordinates": {
+      "longitude": -83.955,
+      "latitude": 34.73713
+    }
+  },
+  "Blood Mountain Shelter": {
+    "cordinates": {
+      "longitude": -83.9375,
+      "latitude": 34.73996
+    }
+  },
+  "Whitley Gap Shelter": {
+    "cordinates": {
+      "longitude": -83.8344,
+      "latitude": 34.71239
+    }
+  },
+  "Low Gap Shelter": {
+    "cordinates": {
+      "longitude": -83.8247,
+      "latitude": 34.77618
+    }
+  },
+  "Blue Mountain Shelter": {
+    "cordinates": {
+      "longitude": -83.7668,
+      "latitude": 34.81711
+    }
+  },
+  "Tray Mountain Shelter": {
+    "cordinates": {
+      "longitude": -83.6769,
+      "latitude": 34.80396
+    }
+  },
+  "Deep Gap Shelter": {
+    "cordinates": {
+      "longitude": -83.6462,
+      "latitude": 34.88235
+    }
+  },
+  "Plumorchard Gap Shelter": {
+    "cordinates": {
+      "longitude": -83.5883,
+      "latitude": 34.94604
+    }
+  },
+  "Muskrat Creek Shelter": {
+    "cordinates": {
+      "longitude": -83.5816,
+      "latitude": 35.02054
+    }
+  },
+  "Standing Indian Shelter": {
+    "cordinates": {
+      "longitude": -83.5482,
+      "latitude": 35.04183
+    }
+  },
+  "Carter Gap Shelter": {
+    "cordinates": {
+      "longitude": -83.4949,
+      "latitude": 34.99987
+    }
+  },
+  "Long Branch Shelter": {
+    "cordinates": {
+      "longitude": -83.4789,
+      "latitude": 35.05891
+    }
+  },
+  "Rock Gap Shelter": {
+    "cordinates": {
+      "longitude": -83.5231,
+      "latitude": 35.09144
+    }
+  },
+  "Siler Bald Shelter": {
+    "cordinates": {
+      "longitude": -83.5725,
+      "latitude": 35.14414
+    }
+  },
+  "Wayah Bald Shelter": {
+    "cordinates": {
+      "longitude": -83.5644,
+      "latitude": 35.18945
+    }
+  },
+  "Cold Spring Shelter": {
+    "cordinates": {
+      "longitude": -83.5599,
+      "latitude": 35.2309
+    }
+  },
+  "Wesser Bald Shelter": {
+    "cordinates": {
+      "longitude": -83.5822,
+      "latitude": 35.28235
+    }
+  },
+  "A. Rufus Morgan Shelter": {
+    "cordinates": {
+      "longitude": -83.5902,
+      "latitude": 35.32418
+    }
+  },
+  "Sassafras Gap Shelter": {
+    "cordinates": {
+      "longitude": -83.667,
+      "latitude": 35.33068
+    }
+  },
+  "Brown Fork Gap Shelter": {
+    "cordinates": {
+      "longitude": -83.7339,
+      "latitude": 35.37424
+    }
+  },
+  "Cable Gap Shelter": {
+    "cordinates": {
+      "longitude": -83.7736,
+      "latitude": 35.41522
+    }
+  },
+  "Mollies Ridge Shelter": {
+    "cordinates": {
+      "longitude": -83.7936,
+      "latitude": 35.54578
+    }
+  },
+  "Russell Field Shelter": {
+    "cordinates": {
+      "longitude": -83.7666,
+      "latitude": 35.56174
+    }
+  },
+  "Spence Field Shelter": {
+    "cordinates": {
+      "longitude": -83.7327,
+      "latitude": 35.5618
+    }
+  },
+  "Derrick Knob Shelter": {
+    "cordinates": {
+      "longitude": -83.6419,
+      "latitude": 35.56625
+    }
+  },
+  "Silers Bald Shelter": {
+    "cordinates": {
+      "longitude": -83.5683,
+      "latitude": 35.5642
+    }
+  },
+  "Double Spring Gap Shelter": {
+    "cordinates": {
+      "longitude": -83.5429,
+      "latitude": 35.56517
+    }
+  },
+  "Mt. Collins Shelter": {
+    "cordinates": {
+      "longitude": -83.4714,
+      "latitude": 35.59374
+    }
+  },
+  "Icewater Spring Shelter": {
+    "cordinates": {
+      "longitude": -83.3864,
+      "latitude": 35.62969
+    }
+  },
+  "Pecks Corner Shelter": {
+    "cordinates": {
+      "longitude": -83.3086,
+      "latitude": 35.65074
+    }
+  },
+  "Tri-corner Knob Shelter": {
+    "cordinates": {
+      "longitude": -83.2567,
+      "latitude": 35.69367
+    }
+  },
+  "Cosby Knob Shelter": {
+    "cordinates": {
+      "longitude": -83.1822,
+      "latitude": 35.72708
+    }
+  },
+  "Davenport Gap Shelter": {
+    "cordinates": {
+      "longitude": -83.1237,
+      "latitude": 35.76922
+    }
+  },
+  "Groundhog Creek Shelter": {
+    "cordinates": {
+      "longitude": -83.0263,
+      "latitude": 35.78166
+    }
+  },
+  "Roaring Fork Shelter": {
+    "cordinates": {
+      "longitude": -82.9386,
+      "latitude": 35.82234
+    }
+  },
+  "Walnut Mountain Shelter": {
+    "cordinates": {
+      "longitude": -82.9367,
+      "latitude": 35.83645
+    }
+  },
+  "Deer Park Mountain Shelter": {
+    "cordinates": {
+      "longitude": -82.8614,
+      "latitude": 35.87583
+    }
+  },
+  "Spring Mountain Shelter": {
+    "cordinates": {
+      "longitude": -82.7902,
+      "latitude": 35.95148
+    }
+  },
+  "Little Laurel Shelter": {
+    "cordinates": {
+      "longitude": -82.7359,
+      "latitude": 36.01499
+    }
+  },
+  "Jerry Cabin Shelter": {
+    "cordinates": {
+      "longitude": -82.6574,
+      "latitude": 36.05647
+    }
+  },
+  "Flint Mountain Shelter": {
+    "cordinates": {
+      "longitude": -82.5969,
+      "latitude": 36.03479
+    }
+  },
+  "Hogback Ridge Shelter": {
+    "cordinates": {
+      "longitude": -82.5872,
+      "latitude": 35.96395
+    }
+  },
+  "Bald Mountain Shelter": {
+    "cordinates": {
+      "longitude": -82.4783,
+      "latitude": 36.0
+    }
+  },
+  "No Business Knob Shelter": {
+    "cordinates": {
+      "longitude": -82.4336,
+      "latitude": 36.06677
+    }
+  },
+  "Curley Maple Gap Shelter": {
+    "cordinates": {
+      "longitude": -82.397,
+      "latitude": 36.10417
+    }
+  },
+  "Cherry Gap Shelter": {
+    "cordinates": {
+      "longitude": -82.2642,
+      "latitude": 36.12924
+    }
+  },
+  "Clyde Smith Shelter": {
+    "cordinates": {
+      "longitude": -82.1613,
+      "latitude": 36.14844
+    }
+  },
+  "Roan High Knob Shelter": {
+    "cordinates": {
+      "longitude": -82.1227,
+      "latitude": 36.10496
+    }
+  },
+  "Stan Murray Shelter": {
+    "cordinates": {
+      "longitude": -82.0659,
+      "latitude": 36.11227
+    }
+  },
+  "Overmountain Shelter": {
+    "cordinates": {
+      "longitude": -82.0544,
+      "latitude": 36.12354
+    }
+  },
+  "Mountaineer Shelter ": {
+    "cordinates": {
+      "longitude": -81.98569,
+      "latitude": 36.2022
+    }
+  },
+  "Moreland Gap Shelter": {
+    "cordinates": {
+      "longitude": -82.0885,
+      "latitude": 36.22012
+    }
+  },
+  "Laurel Fork Shelter": {
+    "cordinates": {
+      "longitude": -82.1364,
+      "latitude": 36.27856
+    }
+  },
+  "Watauga Lake Shelter": {
+    "cordinates": {
+      "longitude": -82.1295,
+      "latitude": 36.31388
+    }
+  },
+  "Vandeventer Shelter": {
+    "cordinates": {
+      "longitude": -82.059,
+      "latitude": 36.36694
+    }
+  },
+  "Iron Mountain Shelter": {
+    "cordinates": {
+      "longitude": -81.991,
+      "latitude": 36.43553
+    }
+  },
+  "Double Springs Shelter": {
+    "cordinates": {
+      "longitude": -81.9862,
+      "latitude": 36.50897
+    }
+  },
+  "Abingdon Gap Shelter": {
+    "cordinates": {
+      "longitude": -81.9022,
+      "latitude": 36.58101
+    }
+  },
+  "Saunders Shelter": {
+    "cordinates": {
+      "longitude": -81.7132,
+      "latitude": 36.6377
+    }
+  },
+  "Lost Mountain Shelter": {
+    "cordinates": {
+      "longitude": -81.6563,
+      "latitude": 36.64406
+    }
+  },
+  "Thomas Knob Shelter": {
+    "cordinates": {
+      "longitude": -81.5354,
+      "latitude": 36.65656
+    }
+  },
+  "Wise Shelter": {
+    "cordinates": {
+      "longitude": -81.4986,
+      "latitude": 36.65392
+    }
+  },
+  "Old Orchard Shelter": {
+    "cordinates": {
+      "longitude": -81.5112,
+      "latitude": 36.68321
+    }
+  },
+  "Hurricane Mountain Shelter": {
+    "cordinates": {
+      "longitude": -81.5095,
+      "latitude": 36.71535
+    }
+  },
+  "Trimpi Shelter": {
+    "cordinates": {
+      "longitude": -81.4806,
+      "latitude": 36.74918
+    }
+  },
+  "Partnership Shelter": {
+    "cordinates": {
+      "longitude": -81.4226,
+      "latitude": 36.8094
+    }
+  },
+  "Chatfield Shelter": {
+    "cordinates": {
+      "longitude": -81.3633,
+      "latitude": 36.84991
+    }
+  },
+  "Davis Path Campsite": {
+    "cordinates": {
+      "longitude": -81.3769,
+      "latitude": 36.91444
+    }
+  },
+  "Knot Maul Branch Shelter": {
+    "cordinates": {
+      "longitude": -81.4046,
+      "latitude": 37.00066
+    }
+  },
+  "Chestnut Knob Shelter": {
+    "cordinates": {
+      "longitude": -81.3995,
+      "latitude": 37.05769
+    }
+  },
+  "Jenkins Shelter": {
+    "cordinates": {
+      "longitude": -81.2478,
+      "latitude": 37.09339
+    }
+  },
+  "Helveys Mill Shelter": {
+    "cordinates": {
+      "longitude": -81.1044,
+      "latitude": 37.13262
+    }
+  },
+  "Jenny Knob Shelter": {
+    "cordinates": {
+      "longitude": -80.9803,
+      "latitude": 37.15498
+    }
+  },
+  "Wapiti Shelter": {
+    "cordinates": {
+      "longitude": -80.8241,
+      "latitude": 37.22394
+    }
+  },
+  "Docs Knob Shelter": {
+    "cordinates": {
+      "longitude": -80.8364,
+      "latitude": 37.27021
+    }
+  },
+  "Rice Field Shelter": {
+    "cordinates": {
+      "longitude": -80.7586,
+      "latitude": 37.37479
+    }
+  },
+  "Pine Swamp Branch Shelter": {
+    "cordinates": {
+      "longitude": -80.6088,
+      "latitude": 37.42209
+    }
+  },
+  "Bailey Gap Shelter": {
+    "cordinates": {
+      "longitude": -80.5772,
+      "latitude": 37.40086
+    }
+  },
+  "War Spur Shelter": {
+    "cordinates": {
+      "longitude": -80.474,
+      "latitude": 37.39754
+    }
+  },
+  "Laurel Creek Shelter": {
+    "cordinates": {
+      "longitude": -80.4212,
+      "latitude": 37.35891
+    }
+  },
+  "Sarver Hollow Shelter": {
+    "cordinates": {
+      "longitude": -80.3352,
+      "latitude": 37.35545
+    }
+  },
+  "Niday Shelter": {
+    "cordinates": {
+      "longitude": -80.2644,
+      "latitude": 37.38749
+    }
+  },
+  "Pickle Branch Shelter": {
+    "cordinates": {
+      "longitude": -80.1911,
+      "latitude": 37.3881
+    }
+  },
+  "Johns Spring/Boy Scout Shelter": {
+    "cordinates": {
+      "longitude": -80.0741,
+      "latitude": 37.38531
+    }
+  },
+  "Catawba Mountain Shelter": {
+    "cordinates": {
+      "longitude": -80.0574,
+      "latitude": 37.3882
+    }
+  },
+  "Campbell Shelter": {
+    "cordinates": {
+      "longitude": -80.0295,
+      "latitude": 37.39079
+    }
+  },
+  "Lamberts Meadow Shelter": {
+    "cordinates": {
+      "longitude": -79.9878,
+      "latitude": 37.43456
+    }
+  },
+  "Fullhardt Knob Shelter": {
+    "cordinates": {
+      "longitude": -79.8539,
+      "latitude": 37.39847
+    }
+  },
+  "Wilson Creek Shelter": {
+    "cordinates": {
+      "longitude": -79.7857,
+      "latitude": 37.41926
+    }
+  },
+  "Bobblets Gap Shelter": {
+    "cordinates": {
+      "longitude": -79.7014,
+      "latitude": 37.4672
+    }
+  },
+  "Cove Mountain Shelter": {
+    "cordinates": {
+      "longitude": -77.0678,
+      "latitude": 40.36346
+    }
+  },
+  "Bryant Ridge Shelter": {
+    "cordinates": {
+      "longitude": -79.5856,
+      "latitude": 37.53004
+    }
+  },
+  "Cornelius Creek Shelter": {
+    "cordinates": {
+      "longitude": -79.5472,
+      "latitude": 37.49391
+    }
+  },
+  "Thunder Hill Shelter": {
+    "cordinates": {
+      "longitude": -79.5042,
+      "latitude": 37.52738
+    }
+  },
+  "Matts Creek Shelter": {
+    "cordinates": {
+      "longitude": -79.4135,
+      "latitude": 37.59945
+    }
+  },
+  "Johns Hollow Shelter": {
+    "cordinates": {
+      "longitude": -79.3921,
+      "latitude": 37.613
+    }
+  },
+  "Punchbowl Shelter": {
+    "cordinates": {
+      "longitude": -79.3388,
+      "latitude": 37.67775
+    }
+  },
+  "Brown Mountain Creek Shelter": {
+    "cordinates": {
+      "longitude": -79.2682,
+      "latitude": 37.71023
+    }
+  },
+  "Cow Camp Gap Shelter": {
+    "cordinates": {
+      "longitude": -79.2133,
+      "latitude": 37.74662
+    }
+  },
+  "Seeley-Woodworth Shelter": {
+    "cordinates": {
+      "longitude": -79.1551,
+      "latitude": 37.81893
+    }
+  },
+  "The Priest Shelter": {
+    "cordinates": {
+      "longitude": -79.0706,
+      "latitude": 37.81775
+    }
+  },
+  "Harpers Creek Shelter": {
+    "cordinates": {
+      "longitude": -79.0012,
+      "latitude": 37.85641
+    }
+  },
+  "Maupin Field Shelter": {
+    "cordinates": {
+      "longitude": -78.9939,
+      "latitude": 37.88488
+    }
+  },
+  "Paul C. Wolfe Shelter": {
+    "cordinates": {
+      "longitude": -78.8839,
+      "latitude": 37.98564
+    }
+  },
+  "Calf Mountain Shelter": {
+    "cordinates": {
+      "longitude": -78.7868,
+      "latitude": 38.08552
+    }
+  },
+  "Blackrock Hut": {
+    "cordinates": {
+      "longitude": -78.7427,
+      "latitude": 38.21408
+    }
+  },
+  "Pinefield Hut": {
+    "cordinates": {
+      "longitude": -78.646,
+      "latitude": 38.29055
+    }
+  },
+  "Hightop Hut": {
+    "cordinates": {
+      "longitude": -78.5586,
+      "latitude": 38.33304
+    }
+  },
+  "Bearfence Mountain Hut": {
+    "cordinates": {
+      "longitude": -78.4707,
+      "latitude": 38.44408
+    }
+  },
+  "Rock Spring Hut": {
+    "cordinates": {
+      "longitude": -78.4086,
+      "latitude": 38.55307
+    }
+  },
+  "Byrds Nest #3 Hut": {
+    "cordinates": {
+      "longitude": -78.32375,
+      "latitude": 38.63441
+    }
+  },
+  "Pass Mountain Hut": {
+    "cordinates": {
+      "longitude": -78.3192,
+      "latitude": 38.67657
+    }
+  },
+  "Gravel Springs Hut": {
+    "cordinates": {
+      "longitude": -78.2345,
+      "latitude": 38.76347
+    }
+  },
+  "Tom Floyd Wayside Shelter": {
+    "cordinates": {
+      "longitude": -78.1639,
+      "latitude": 38.85039
+    }
+  },
+  "Jim & Molly Denton Shelter": {
+    "cordinates": {
+      "longitude": -78.0833,
+      "latitude": 38.88996
+    }
+  },
+  "Manassas Gap Shelter": {
+    "cordinates": {
+      "longitude": -78.0331,
+      "latitude": 38.93059
+    }
+  },
+  "Dicks Dome Shelter": {
+    "cordinates": {
+      "longitude": -77.997,
+      "latitude": 38.96992
+    }
+  },
+  "Rod Hollow Shelter": {
+    "cordinates": {
+      "longitude": -77.9444,
+      "latitude": 39.04782
+    }
+  },
+  "Sam Moore Shelter": {
+    "cordinates": {
+      "longitude": -77.8866,
+      "latitude": 39.09064
+    }
+  },
+  "David Lesser Memorial Shelter": {
+    "cordinates": {
+      "longitude": -77.7795,
+      "latitude": 39.22718
+    }
+  },
+  "Ed Garvey Shelter": {
+    "cordinates": {
+      "longitude": -77.6643,
+      "latitude": 39.35645
+    }
+  },
+  "Crampton Gap Shelter": {
+    "cordinates": {
+      "longitude": -77.6376,
+      "latitude": 39.41253
+    }
+  },
+  "Rocky Run Shelters": {
+    "cordinates": {
+      "longitude": -77.6314,
+      "latitude": 39.46081
+    }
+  },
+  "Dahlgren Backpack Campground": {
+    "cordinates": {
+      "longitude": -77.60148,
+      "latitude": 39.49203
+    }
+  },
+  "Pine Knob Shelter": {
+    "cordinates": {
+      "longitude": -77.6024,
+      "latitude": 39.5425
+    }
+  },
+  "Ensign Cowall Shelter": {
+    "cordinates": {
+      "longitude": -77.5576,
+      "latitude": 39.62774
+    }
+  },
+  "Raven Rock Shelter": {
+    "cordinates": {
+      "longitude": -77.5246,
+      "latitude": 39.67203
+    }
+  },
+  "Deer Lick Shelters": {
+    "cordinates": {
+      "longitude": -77.4852,
+      "latitude": 39.76619
+    }
+  },
+  "Antietam Shelter": {
+    "cordinates": {
+      "longitude": -77.483,
+      "latitude": 39.79381
+    }
+  },
+  "Tumbling Run Shelters": {
+    "cordinates": {
+      "longitude": -77.4783,
+      "latitude": 39.805
+    }
+  },
+  "Rocky Mountain Shelters": {
+    "cordinates": {
+      "longitude": -77.5009,
+      "latitude": 39.86856
+    }
+  },
+  "Quarry Gap Shelters": {
+    "cordinates": {
+      "longitude": -77.4867,
+      "latitude": 39.93196
+    }
+  },
+  "Birch Run Shelter": {
+    "cordinates": {
+      "longitude": -77.4207,
+      "latitude": 39.98459
+    }
+  },
+  "Toms Run Shelters": {
+    "cordinates": {
+      "longitude": -77.3573,
+      "latitude": 40.03429
+    }
+  },
+  "James Fry  (Tagg Run) Shelter": {
+    "cordinates": {
+      "longitude": -77.2064,
+      "latitude": 40.06297
+    }
+  },
+  "Alec Kennedy Shelter": {
+    "cordinates": {
+      "longitude": -77.1043,
+      "latitude": 40.11192
+    }
+  },
+  "Darlington Shelter": {
+    "cordinates": {
+      "longitude": -77.0874,
+      "latitude": 40.30198
+    }
+  },
+  "Clarks Ferry Shelter": {
+    "cordinates": {
+      "longitude": -76.994,
+      "latitude": 40.39222
+    }
+  },
+  "Peters Mountain Shelter": {
+    "cordinates": {
+      "longitude": -76.8797,
+      "latitude": 40.42579
+    }
+  },
+  "Rausch Gap Shelter": {
+    "cordinates": {
+      "longitude": -76.6005,
+      "latitude": 40.49853
+    }
+  },
+  "William Penn Shelter": {
+    "cordinates": {
+      "longitude": -76.4144,
+      "latitude": 40.4956
+    }
+  },
+  "501 Shelter": {
+    "cordinates": {
+      "longitude": -76.3469,
+      "latitude": 40.51251
+    }
+  },
+  "Eagles Nest Shelter": {
+    "cordinates": {
+      "longitude": -76.1527,
+      "latitude": 40.54929
+    }
+  },
+  "Windsor Furnace Shelter": {
+    "cordinates": {
+      "longitude": -75.9423,
+      "latitude": 40.59029
+    }
+  },
+  "Eckville Shelter": {
+    "cordinates": {
+      "longitude": -75.9588,
+      "latitude": 40.63284
+    }
+  },
+  "Allentown Hiking Club Shelter": {
+    "cordinates": {
+      "longitude": -75.8744,
+      "latitude": 40.68306
+    }
+  },
+  "Bake Oven Knob Shelter": {
+    "cordinates": {
+      "longitude": -75.7274,
+      "latitude": 40.75412
+    }
+  },
+  "George W. Outerbridge Shelter": {
+    "cordinates": {
+      "longitude": -75.6183,
+      "latitude": 40.78249
+    }
+  },
+  "Leroy A. Smith Shelter": {
+    "cordinates": {
+      "longitude": -75.3598,
+      "latitude": 40.83935
+    }
+  },
+  "Kirkridge Shelter": {
+    "cordinates": {
+      "longitude": -75.1869,
+      "latitude": 40.9367
+    }
+  },
+  "Brink Road Shelter": {
+    "cordinates": {
+      "longitude": -74.8382,
+      "latitude": 41.1532
+    }
+  },
+  "Gren Anderson Shelter": {
+    "cordinates": {
+      "longitude": -74.7531,
+      "latitude": 41.19939
+    }
+  },
+  "Mashipacong Shelter": {
+    "cordinates": {
+      "longitude": -74.6868,
+      "latitude": 41.25212
+    }
+  },
+  "Rutherford Shelter": {
+    "cordinates": {
+      "longitude": -74.6785,
+      "latitude": 41.27747
+    }
+  },
+  "High Point Shelter": {
+    "cordinates": {
+      "longitude": -74.6438,
+      "latitude": 41.32775
+    }
+  },
+  "Pochuck Mountain Shelter": {
+    "cordinates": {
+      "longitude": -74.5163,
+      "latitude": 41.27167
+    }
+  },
+  "Wawayanda Shelter": {
+    "cordinates": {
+      "longitude": -74.3985,
+      "latitude": 41.20219
+    }
+  },
+  "Wildcat Shelter": {
+    "cordinates": {
+      "longitude": -74.2683,
+      "latitude": 41.26835
+    }
+  },
+  "Fingerboard Shelter": {
+    "cordinates": {
+      "longitude": -74.1044,
+      "latitude": 41.26328
+    }
+  },
+  "William Brien Memorial Shelter": {
+    "cordinates": {
+      "longitude": -74.0599,
+      "latitude": 41.2797
+    }
+  },
+  "West Mountain Shelter": {
+    "cordinates": {
+      "longitude": -74.0111,
+      "latitude": 41.2841
+    }
+  },
+  "RPH Shelter": {
+    "cordinates": {
+      "longitude": -73.7929,
+      "latitude": 41.51438
+    }
+  },
+  "Morgan Stewart Memorial Shelter": {
+    "cordinates": {
+      "longitude": -73.6921,
+      "latitude": 41.56455
+    }
+  },
+  "Telephone Pioneers Shelter": {
+    "cordinates": {
+      "longitude": -73.6193,
+      "latitude": 41.60427
+    }
+  },
+  "Wiley Shelter": {
+    "cordinates": {
+      "longitude": -73.5327,
+      "latitude": 41.63775
+    }
+  },
+  "Ten Mile River Shelter": {
+    "cordinates": {
+      "longitude": -73.5099,
+      "latitude": 41.66507
+    }
+  },
+  "Mt. Algo Shelter": {
+    "cordinates": {
+      "longitude": -73.4967,
+      "latitude": 41.73165
+    }
+  },
+  "Stewart Hollow Brook Shelter": {
+    "cordinates": {
+      "longitude": -73.4198,
+      "latitude": 41.7786
+    }
+  },
+  "Pine Swamp Brook Shelter": {
+    "cordinates": {
+      "longitude": -73.3921,
+      "latitude": 41.88163
+    }
+  },
+  "Limestone Spring Shelter": {
+    "cordinates": {
+      "longitude": -73.3923,
+      "latitude": 41.97513
+    }
+  },
+  "Riga Shelter": {
+    "cordinates": {
+      "longitude": -73.4477,
+      "latitude": 42.01458
+    }
+  },
+  "Brassie Brook Shelter": {
+    "cordinates": {
+      "longitude": -73.4536,
+      "latitude": 42.02833
+    }
+  },
+  "The Hemlocks Shelter": {
+    "cordinates": {
+      "longitude": -73.429,
+      "latitude": 42.1099
+    }
+  },
+  "Glen Brook Shelter": {
+    "cordinates": {
+      "longitude": -73.4283,
+      "latitude": 42.11114
+    }
+  },
+  "Tom Leonard Shelter": {
+    "cordinates": {
+      "longitude": -73.3062,
+      "latitude": 42.16483
+    }
+  },
+  "Mt. Wilcox South Shelters": {
+    "cordinates": {
+      "longitude": -73.2685,
+      "latitude": 42.20781
+    }
+  },
+  "Mt. Wilcox North Shelter": {
+    "cordinates": {
+      "longitude": -73.2506,
+      "latitude": 42.22102
+    }
+  },
+  "Upper Goose Pond Cabin": {
+    "cordinates": {
+      "longitude": -73.1813,
+      "latitude": 42.28865
+    }
+  },
+  "October Mountain Shelter": {
+    "cordinates": {
+      "longitude": -73.1545,
+      "latitude": 42.35487
+    }
+  },
+  "Kay Wood Shelter": {
+    "cordinates": {
+      "longitude": -73.1619,
+      "latitude": 42.4525
+    }
+  },
+  "Mark Noepel Shelter": {
+    "cordinates": {
+      "longitude": -73.1845,
+      "latitude": 42.60855
+    }
+  },
+  "Pecks Brook Shelter": {
+    "cordinates": {
+      "longitude": -73.1673,
+      "latitude": 42.62521
+    }
+  },
+  "Deer Hill Shelter": {
+    "cordinates": {
+      "longitude": -73.194,
+      "latitude": 42.62935
+    }
+  },
+  "Bellows Pipe Shelter": {
+    "cordinates": {
+      "longitude": -73.1547,
+      "latitude": 42.6441
+    }
+  },
+  "Wilbur Clearing Shelter": {
+    "cordinates": {
+      "longitude": -73.1698,
+      "latitude": 42.66848
+    }
+  },
+  "Seth Warner Shelter": {
+    "cordinates": {
+      "longitude": -73.1376,
+      "latitude": 42.77184
+    }
+  },
+  "Congdon Shelter": {
+    "cordinates": {
+      "longitude": -73.1104,
+      "latitude": 42.84805
+    }
+  },
+  "Melville Nauheim Shelter": {
+    "cordinates": {
+      "longitude": -73.0962,
+      "latitude": 42.88778
+    }
+  },
+  "Goddard Shelter": {
+    "cordinates": {
+      "longitude": -73.0726,
+      "latitude": 42.97413
+    }
+  },
+  "Kid Gore Shelter": {
+    "cordinates": {
+      "longitude": -73.0416,
+      "latitude": 43.01303
+    }
+  },
+  "Story Spring Shelter": {
+    "cordinates": {
+      "longitude": -73.013,
+      "latitude": 43.05054
+    }
+  },
+  "Stratton Pond Shelter": {
+    "cordinates": {
+      "longitude": -72.9688,
+      "latitude": 43.10141
+    }
+  },
+  "William B Douglas Shelter": {
+    "cordinates": {
+      "longitude": -72.9914,
+      "latitude": 43.1445
+    }
+  },
+  "Spruce Peak Shelter": {
+    "cordinates": {
+      "longitude": -72.9957,
+      "latitude": 43.1786
+    }
+  },
+  "Bromley Shelter": {
+    "cordinates": {
+      "longitude": -72.9372,
+      "latitude": 43.2395
+    }
+  },
+  "Peru Peak Shelter": {
+    "cordinates": {
+      "longitude": -72.9529,
+      "latitude": 43.30132
+    }
+  },
+  "Lost Pond Shelter": {
+    "cordinates": {
+      "longitude": -72.9531,
+      "latitude": 43.34543
+    }
+  },
+  "Old Job Shelter": {
+    "cordinates": {
+      "longitude": -72.9289,
+      "latitude": 43.35407
+    }
+  },
+  "Big Branch Shelter": {
+    "cordinates": {
+      "longitude": -72.9469,
+      "latitude": 43.36407
+    }
+  },
+  "Little Rock Pond Shelter": {
+    "cordinates": {
+      "longitude": -72.9536,
+      "latitude": 43.40422
+    }
+  },
+  "Greenwall Shelter": {
+    "cordinates": {
+      "longitude": -72.9291,
+      "latitude": 43.44042
+    }
+  },
+  "Minerva Hinchey Shelter": {
+    "cordinates": {
+      "longitude": -72.925,
+      "latitude": 43.48779
+    }
+  },
+  "Clarendon Shelter": {
+    "cordinates": {
+      "longitude": -72.9131,
+      "latitude": 43.52353
+    }
+  },
+  "Governor Clement Shelter": {
+    "cordinates": {
+      "longitude": -72.8488,
+      "latitude": 43.56456
+    }
+  },
+  "Cooper Lodge Shelter": {
+    "cordinates": {
+      "longitude": -72.8229,
+      "latitude": 43.60595
+    }
+  },
+  "Pico Camp Shelter": {
+    "cordinates": {
+      "longitude": -72.831,
+      "latitude": 43.63903
+    }
+  },
+  "Churchill Scott Shelter": {
+    "cordinates": {
+      "longitude": -72.85339,
+      "latitude": 43.64489
+    }
+  },
+  "Tucker Johnson Camping Area": {
+    "cordinates": {
+      "longitude": -72.9001,
+      "latitude": 43.69112
+    }
+  },
+  "Stony Brook Shelter": {
+    "cordinates": {
+      "longitude": -72.8428,
+      "latitude": 43.72785
+    }
+  },
+  "Happy Hill Shelter": {
+    "cordinates": {
+      "longitude": -72.8062,
+      "latitude": 43.75732
+    }
+  },
+  "Thistle Hill Shelter": {
+    "cordinates": {
+      "longitude": -72.7656,
+      "latitude": 43.79961
+    }
+  },
+  "Shakleton Shelter": {
+    "cordinates": {
+      "longitude": -72.7745,
+      "latitude": 43.85361
+    }
+  }
+}
