@@ -191,7 +191,7 @@ def generateData(nMiles, nWeeks):
 
 # Create a DataFrame from the filtered data
 # make it so this data generation only happens once and not every time while the app is running
-milesSearching = 10
+milesSearching = 20
 weeksSearching = 1
 data_dict = generateData(milesSearching, weeksSearching)
 output_data = {"miles": milesSearching, "weeks": weeksSearching, "data": data_dict}

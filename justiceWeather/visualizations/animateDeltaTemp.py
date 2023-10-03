@@ -21,7 +21,6 @@ def convertMonthYearToMonthYear(monthYear):
     return month, year
 
 
-
 def count_entries_within_radius(target_lon, target_lat, radius_miles):
     # Convert miles to degrees (roughly, considering Earth's radius)
     degrees_per_mile = 1 / 69  # Approximately
@@ -165,13 +164,13 @@ app.layout = html.Div(
 )
 
 
-# Define a callback to update the heatmap based on the selected month and year
+# Define a callback to update the heatmap based on the selected month and yearc
 @app.callback(Output("heatmap", "figure"), Input("interval-component", "n_intervals"))
 def update_heatmap(n_intervals):
     global currMonthYear
     currMonthYear = (currMonthYear + 1) % (len(years_showing) * 12)
     selected_month, selected_year = convertMonthYearToMonthYear(currMonthYear)
-    print(f"selected_month = {selected_month}, selected_year = {selected_year}"")
+    print(f"selected_month = {selected_month}, selected_year = {selected_year}")
     # Filter the DataFrame based on the selected month and year
     filtered_df = df[(df["month"] == (selected_month)) & (df["year"] == selected_year)]
 

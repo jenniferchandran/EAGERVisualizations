@@ -12,7 +12,9 @@ weather_data_file_path = "../weather_data.json"
 
 
 # import the data from the weather_data.json file
-def count_entries_within_radius(target_lon, target_lat, radius_miles):
+def count_entries_within_radius(
+    target_lon, target_lat, radius_miles, currYear, currMonth
+):
     # Convert miles to degrees (roughly, considering Earth's radius)
     degrees_per_mile = 1 / 69  # Approximately
     radius_deg = radius_miles * degrees_per_mile
@@ -29,6 +31,8 @@ def count_entries_within_radius(target_lon, target_lat, radius_miles):
         & (df["lon"] <= max_lon)
         & (df["lat"] >= min_lat)
         & (df["lat"] <= max_lat)
+        & (df["year"] == currYear)
+        & (df["month"] == currMonth)
     ]
 
     # Get the count of entries within the radius
@@ -208,7 +212,10 @@ def update_heatmap(selected_month, selected_year):
     fig.update_traces(
         hovertemplate="<b>Temperature</b>: %{z}<br><b>Entries in 5-Mile Radius</b>: %{customdata}",
         customdata=filtered_df.apply(
-            lambda row: count_entries_within_radius(row["lon"], row["lat"], 5), axis=1
+            lambda row: count_entries_within_radius(
+                row["lon"], row["lat"], 5, row["year"], row["month"]
+            ),
+            axis=1,
         ),
     )
 
