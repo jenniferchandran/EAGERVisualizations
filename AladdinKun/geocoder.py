@@ -2,7 +2,6 @@ import geopandas as gpd
 import cartopy.io.shapereader as shpreader
 import pandas as pd
 from shapely.geometry import Point, shape
-from geopy.geocoders import Nominatim
 import pandas
 
 # Mapping of state names to their abbreviations for the US
@@ -17,22 +16,6 @@ state_to_abbr = {
     'South Dakota': 'SD', 'Tennessee': 'TN', 'Texas': 'TX', 'Utah': 'UT', 'Vermont': 'VT', 'Virginia': 'VA',
     'Washington': 'WA', 'West Virginia': 'WV', 'Wisconsin': 'WI', 'Wyoming': 'WY'
 }
-
-# Function to get the state from coordinates
-
-
-def get_state_from_coords(arg):
-    Latitude, Longitude = arg
-    geolocator = Nominatim(user_agent="myGeocodeApp")
-
-    try:
-        location = geolocator.reverse(
-            (float(Latitude), float(Longitude)), exactly_one=True)
-        address = location.raw['address']
-        state = address.get('state', "")
-        return state_to_abbr.get(state, state)
-    except:
-        return pandas.NA
 
 
 # Get the geometries of US states
@@ -51,6 +34,15 @@ gdf_states = gpd.GeoDataFrame(data)
 
 def get_state_abbr_from_coords(arg):
     latitude, longitude = arg
+    if pandas.isna(latitude) or pandas.isna(longitude):
+        return pandas.NA
+    
+    try:
+        latitude = float(latitude)
+        longitude = float(longitude)
+    except:
+        return pandas.NA
+
     geom = [Point(longitude, latitude)]
     point_gdf = gpd.GeoDataFrame(geometry=geom)
 
@@ -61,4 +53,4 @@ def get_state_abbr_from_coords(arg):
         return pd.NA
     else:
         state_name = point_in_states.iloc[0]['name']
-        return state_to_abbr.get(state_name, state_name)
+        return state_name
