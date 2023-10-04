@@ -3,11 +3,17 @@ import os
 import time
 import requests
 import json
+from thefuzz import fuzz
+from thefuzz import process
 import pandas as pd
 from utility.testingAPIKeyValidity import testKeys
 
 
-# TODO add VENV -> Virtual Environment
+# TODO change color of bars to relate to weather
+# TODO have a static bar that with density over all time
+# TODO have a static bar that changes over time with months and years
+# TODO DO FIRST ->>>>>> start doing sentiment with trips
+# TODO add a way to show all the trips
 
 
 # remove all spaces from a string then make it lowercase
@@ -73,6 +79,24 @@ def convertDateToTimestamp(date, currYear):
     return int(datetime.datetime(currYear, monthNum, day).timestamp())
 
 
+exclude_words = [
+    "shelter",
+    "shelters",
+    "SHELTER",
+    "sheltered",
+    "Shelter",
+    "Shelters",
+    "SHELTERED",
+    "SHELTERS",
+]
+
+
+def custom_scorer(s1, s2):
+    s1_tokens = [token for token in s1.split() if token not in exclude_words]
+    s2_tokens = [token for token in s2.split() if token not in exclude_words]
+    return fuzz.token_set_ratio(s1_tokens, s2_tokens)
+
+
 # make a method called save_data_to_json that takes a param called data and is a dctionary, this method so that if any of the values are none or NaN, skip over that entry
 def save_data_to_json(data):
     # create a new dictionary that will be returned at the end of the method
@@ -120,6 +144,7 @@ def main(apiKeys):
             "2022.xlsx",
             "2023.xlsx",
         ]
+
         # reverse the file path in place
         file_paths.reverse()
 
@@ -141,9 +166,10 @@ def main(apiKeys):
             relative_file_path = "inputData/" + file_path
             data = pd.read_excel(relative_file_path)
             data["year"] = file_path.split(".")[0]
-            df = pd.concat([df, data])
             if file_path == "2016.xlsx":
                 df.rename(columns={"Date": "date"}, inplace=True)
+            df = pd.concat([df, data])
+
         print("Excel files loaded.")
 
         # # loop through all the rows in the excel file, if the destination is in the dictionary then add the longitude and latitude to the row, if added print the destination and the longitude and latitude
@@ -165,6 +191,41 @@ def main(apiKeys):
                 df.loc[index, "longitude"] = row["Longitude"]
                 df.loc[index, "latitude"] = row["Latitude"]
 
+        totalFuzz = 0
+        totalFuzzCountAdded = 0
+        for _, row in df.iterrows():
+            destination = row["Destination"]
+            # add logic its Hiker Journal Link" is in my_data, then check to see if the longitude row has information that isnt "" or is empty, if it doesnt, update it
+
+            if (
+                not destination
+                or destination == "viewentry"
+                or destination == ""
+                or destination == "view entry"
+                or type(destination) != str
+            ):
+                continue
+
+            # use pandas to check to see if the longitude row has information that isnt "" or is empty
+            if pd.notna(row["longitude"]) and row["longitude"] != "":
+                continue
+
+            totalFuzz += 1
+
+            best_match, score = process.extractOne(
+                destination, shelter_data.keys(), scorer=custom_scorer
+            )
+
+            if score >= 87:
+                print(
+                    f"actual destination = {destination}, best_match = {best_match}, score = {score}"
+                )
+                row["Latitude"] = shelter_data[best_match]["cordinates"]["latitude"]
+                row["Longitude"] = shelter_data[best_match]["cordinates"]["longitude"]
+                totalFuzzCountAdded += 1
+
+        print(f"totalFuzz = {totalFuzz}, totalFuzzCountAdded = {totalFuzzCountAdded}")
+
         # load the weather_data.json file as a dictionary
         with open("weather_data.json") as json_file:
             weather_data = json.load(json_file)  # load the json file as a dictionary
@@ -176,6 +237,7 @@ def main(apiKeys):
         print(
             f"Total number of entries in df with a longitude and latitude that are not null and that have unique hiker journal links: {len(df[df['longitude'].notnull()]['Hiker Journal Link'].unique())}"
         )
+
         time.sleep(5)
 
         totalCount = 0
@@ -188,15 +250,7 @@ def main(apiKeys):
             if (count + alreadyCounted + invalid) % 100 == 0:
                 # clear the
                 os.system("clear")
-                print("")
-                print("")
-                print("")
-                print("")
-                print("")
-                print("")
-                print("")
-                print("")
-                print("")
+                print(" \n \n \n \n \n ")
                 # print a message that shows all the releveant information about the current state of the program
                 print(
                     f"Working on file {totalCount + count} entries in, we've already counted {alreadyCounted} entries"
@@ -205,12 +259,9 @@ def main(apiKeys):
                 print(
                     f"Percentage of current file processed: {round((totalCount + count + len(weather_data)) / len(df[df['longitude'].notnull()]), 2) * 100}%"
                 )
+                print(f'current year == {row["year"]}')
                 print("READ THIS ABOVE ^^^^^^^^^^^^^^^^^^^^^^")
-                print("")
-                print("")
-                print("")
-                print("")
-                print("")
+                print(" \n \n \n \n \n ")
 
             if count == 990:
                 print(f"NEW KEY!, -> {apiKey} was used up")
