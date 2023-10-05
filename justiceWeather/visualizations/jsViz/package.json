@@ -10,6 +10,7 @@
     },
     "dependencies": {
         "deck.gl": "^8.9.0",
+        "mapbox-gl": "^2.15.0",
         "maplibre-gl": "^2.4.0",
         "react": "^18.0.0",
         "react-dom": "^18.0.0",
