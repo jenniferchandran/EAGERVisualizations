@@ -236,43 +236,51 @@ print(f'unique values in year column {df["label"].unique()}')
 # )
 
 
-# make a temp df that drops all where label == neutral
+# Drop rows where label is neutral
 temp_df = df[df["label"] != "neutral"]
-# Group by density and find the most felt emotion for each density point
-most_felt_emotion = (
-    temp_df.groupby("Density")["label"]
-    .agg(lambda x: x.value_counts().idxmax())
-    .reset_index()
+
+# Group by density and count the occurrences of each emotion
+emotion_counts = temp_df.groupby(["Density", "label"]).size().reset_index(name="count")
+
+# Calculate the total count for each density
+total_counts = (
+    emotion_counts.groupby("Density")["count"].sum().reset_index(name="total_count")
 )
 
+# Merge the counts with the total counts to calculate the percentage
+emotion_percentages = pd.merge(emotion_counts, total_counts, on="Density")
+emotion_percentages["percentage"] = (
+    emotion_percentages["count"] / emotion_percentages["total_count"]
+) * 100
+
+# Pivot the table to have emotions as columns
+emotion_percentages_pivot = emotion_percentages.pivot_table(
+    values="percentage", index="Density", columns="label", fill_value=0
+).reset_index()
 
 # Order emotions based on their position from 'surprise' to 'disgust'
-emotion_order = ["surprise", "joy", "neutral", "sadness", "anger", "disgust", "fear"]
+emotion_order = ["surprise", "joy", "sadness", "anger", "disgust", "fear"]
 
-# Map emotions to their order
-most_felt_emotion["label_order"] = most_felt_emotion["label"].apply(
-    lambda x: emotion_order.index(x)
-)
-
-# Sort by density for plotting
-most_felt_emotion.sort_values(by="Density", inplace=True)
-
-# Create a bar chart
-fig = px.bar(
-    most_felt_emotion,
+# create a map of colors for each emotion
+color_map = {
+    "surprise": "#ff0000",
+    "joy": "#ff8000",
+    "sadness": "#ffff00",
+    "anger": "#80ff00",
+    "disgust": "#00ff00",
+    "fear": "#00ff80",
+}
+# Create a line graph
+fig = px.line(
+    emotion_percentages_pivot,
     x="Density",
-    y="label_order",
-    color="label",
-    color_discrete_map=dict(zip(df["label"], df["color"])),
-    text="label",
-    title="Most Felt Emotion at Each Density Point",
-    labels={"label_order": "Emotion", "Density": "Density Point"},
+    y=emotion_order,
+    title="Percentage of Each Emotion in Density Areas (excluding neutral)",
+    labels={"value": "Percentage", "Density": "Density Point"},
+    color_discrete_map=dict(zip(emotion_order, [color_map[x] for x in emotion_order])),
     category_orders={"label": emotion_order},
     height=600,
 )
-
-# Set y-axis labels based on the emotion_order
-fig.update_yaxes(tickvals=list(range(len(emotion_order))), ticktext=emotion_order)
 
 # Show the plot
 fig.show()
