@@ -8,6 +8,8 @@ from dash import dcc
 from dash import html
 from dash.dependencies import Input, Output
 import pydeck as pdk
+import numpy as np
+from scipy.stats import linregress
 
 dtype_dict = {
     "date": str,
@@ -222,7 +224,7 @@ df["Density"] = df.apply(
     axis=1,
 )
 
-print(f'unique values in year column {df["label"].unique()}')
+print(f'unique values in year column {df["year"].unique()}')
 # selected_labels = ["neutral", "joy", "sadness", "surprise", "fear", "anger", "disgust"]
 # filtered_df = df[df["label"].isin(selected_labels)]
 
@@ -261,6 +263,14 @@ emotion_percentages_pivot = emotion_percentages.pivot_table(
 # Order emotions based on their position from 'surprise' to 'disgust'
 emotion_order = ["surprise", "joy", "sadness", "anger", "disgust", "fear"]
 
+for emotion in emotion_order:
+    emotion_percentages_pivot[emotion] = (
+        emotion_percentages_pivot[emotion]
+        .replace(0, np.nan)
+        .interpolate(limit_direction="both")
+    )
+
+
 # create a map of colors for each emotion
 color_map = {
     "surprise": "#ff0000",
@@ -275,12 +285,23 @@ fig = px.line(
     emotion_percentages_pivot,
     x="Density",
     y=emotion_order,
-    title="Percentage of Each Emotion in Density Areas (excluding neutral)",
+    title="Percentage of Each Emotion in Density Areas (excluding neutral) with Line of Best Fit",
     labels={"value": "Percentage", "Density": "Density Point"},
     color_discrete_map=dict(zip(emotion_order, [color_map[x] for x in emotion_order])),
     category_orders={"label": emotion_order},
     height=600,
 )
+
+# Add a line of best fit for each emotion
+for emotion in emotion_order:
+    x = emotion_percentages_pivot["Density"]
+    y = emotion_percentages_pivot[emotion]
+    slope, intercept, _, _, _ = linregress(x, y)
+    line = slope * x + intercept
+    fig.add_scatter(
+        x=x, y=line, mode="lines", line=dict(color="black"), name=f"Fit ({emotion})"
+    )
+
 
 # Show the plot
 fig.show()
