@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_65fe3ef85ecee7b277490c7beb0fcb04 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+    <script src="https://cdn.jsdelivr.net/gh/marslan390/BeautifyMarker/leaflet-beautify-marker-icon.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/marslan390/BeautifyMarker/leaflet-beautify-marker-icon.min.css"/>
+</head>
+<body>
+    
+    <h3 align="center" style="font-size:16px"><b>Top 10 locations for emotion: joy</b></h3>
+    
+        <div style="position: fixed;
+                    bottom: 50px; right: 50px; width: 450px; height: 250px;
+                    border:2px solid grey; z-index:9999; font-size:20px;
+                    ">&nbsp; <b>Legend</b> <br>
+                        &nbsp; 1. Tucker Johnson Camping Area, Vermont <br>
+                        &nbsp; 2. Double Springs Shelter, Tennessee <br>
+                        &nbsp; 3. Bearfence Mountain Hut, Virginia <br>
+        </div>
+        
+    
+            <div class="folium-map" id="map_65fe3ef85ecee7b277490c7beb0fcb04" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_65fe3ef85ecee7b277490c7beb0fcb04 = L.map(
+                "map_65fe3ef85ecee7b277490c7beb0fcb04",
+                {
+                    center: [41.90722, -70.0369],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 5,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_6eb06554e0676680fe0d446537e942a7 = L.tileLayer(
+                "https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca target=\"_blank\" href=\"http://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca target=\"_blank\" href=\"http://cartodb.com/attributions\"\u003eCartoDB\u003c/a\u003e, CartoDB \u003ca target=\"_blank\" href =\"http://cartodb.com/attributions\"\u003eattributions\u003c/a\u003e", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_65fe3ef85ecee7b277490c7beb0fcb04);
+        
+    
+            var marker_d11989d2d6128f82344206dc044d2e2a = L.marker(
+                [43.69112, -72.9001],
+                {}
+            ).addTo(map_65fe3ef85ecee7b277490c7beb0fcb04);
+        
+    
+            var beautify_icon_400da8ee5eca418237628a7702e61dae = new L.BeautifyIcon.icon(
+                {"backgroundColor": "#FFF", "borderColor": "#FFD700", "borderWidth": 3, "iconSize": [40, 40], "innerIconStyle": "margin-top:0; font-size: 20px", "isAlphaNumericIcon": true, "spin": false, "text": 1, "textColor": "#00ABDC"}
+            )
+            marker_d11989d2d6128f82344206dc044d2e2a.setIcon(beautify_icon_400da8ee5eca418237628a7702e61dae);
+        
+    
+        var popup_acccb631f14e8cb54ac9784946f154aa = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_59883c0542a9bb348a1a50602a0688bd = $(`<div id="html_59883c0542a9bb348a1a50602a0688bd" style="width: 100.0%; height: 100.0%;"><b>Shelter:</b> Tucker Johnson Camping Area<br><b>Emotion:</b> joy<br><b>Rank:</b> 1<br><b>Percentage of Emotion in a 5 mile radius:</b> 51.85%<br><b>Total Entries: 27</b></div>`)[0];
+                popup_acccb631f14e8cb54ac9784946f154aa.setContent(html_59883c0542a9bb348a1a50602a0688bd);
+            
+        
+
+        marker_d11989d2d6128f82344206dc044d2e2a.bindPopup(popup_acccb631f14e8cb54ac9784946f154aa)
+        ;
+
+        
+    
+    
+            var marker_6c269d80b988f833418cdbdf2a9f9f30 = L.marker(
+                [36.50897, -81.9862],
+                {}
+            ).addTo(map_65fe3ef85ecee7b277490c7beb0fcb04);
+        
+    
+            var beautify_icon_afe16eb7218992ca601b01c9d7123692 = new L.BeautifyIcon.icon(
+                {"backgroundColor": "#FFF", "borderColor": "#C0C0C0", "borderWidth": 3, "iconSize": [41, 41], "innerIconStyle": "margin-top:0; font-size: 20px", "isAlphaNumericIcon": true, "spin": false, "text": 2, "textColor": "#00ABDC"}
+            )
+            marker_6c269d80b988f833418cdbdf2a9f9f30.setIcon(beautify_icon_afe16eb7218992ca601b01c9d7123692);
+        
+    
+        var popup_d8040b11df13440d76ff68ce38ae5fce = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_803dda7c5c1ae18d7ef8c2dae4c8f823 = $(`<div id="html_803dda7c5c1ae18d7ef8c2dae4c8f823" style="width: 100.0%; height: 100.0%;"><b>Shelter:</b> Double Springs Shelter<br><b>Emotion:</b> joy<br><b>Rank:</b> 2<br><b>Percentage of Emotion in a 5 mile radius:</b> 51.35%<br><b>Total Entries: 37</b></div>`)[0];
+                popup_d8040b11df13440d76ff68ce38ae5fce.setContent(html_803dda7c5c1ae18d7ef8c2dae4c8f823);
+            
+        
+
+        marker_6c269d80b988f833418cdbdf2a9f9f30.bindPopup(popup_d8040b11df13440d76ff68ce38ae5fce)
+        ;
+
+        
+    
+    
+            var marker_c7cf1ac533a48526dce61b4aaf9f673f = L.marker(
+                [38.44408, -78.4707],
+                {}
+            ).addTo(map_65fe3ef85ecee7b277490c7beb0fcb04);
+        
+    
+            var beautify_icon_b9dcde25e7e2085f592ed035cd32b6a1 = new L.BeautifyIcon.icon(
+                {"backgroundColor": "#FFF", "borderColor": "#CD7F32", "borderWidth": 3, "iconSize": [41, 41], "innerIconStyle": "margin-top:0; font-size: 20px", "isAlphaNumericIcon": true, "spin": false, "text": 3, "textColor": "#00ABDC"}
+            )
+            marker_c7cf1ac533a48526dce61b4aaf9f673f.setIcon(beautify_icon_b9dcde25e7e2085f592ed035cd32b6a1);
+        
+    
+        var popup_2a68f54c1627cd521d2f1423b47f9c65 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_ef311894000fa1e3c595709c2321dc75 = $(`<div id="html_ef311894000fa1e3c595709c2321dc75" style="width: 100.0%; height: 100.0%;"><b>Shelter:</b> Bearfence Mountain Hut<br><b>Emotion:</b> joy<br><b>Rank:</b> 3<br><b>Percentage of Emotion in a 5 mile radius:</b> 50.0%<br><b>Total Entries: 12</b></div>`)[0];
+                popup_2a68f54c1627cd521d2f1423b47f9c65.setContent(html_ef311894000fa1e3c595709c2321dc75);
+            
+        
+
+        marker_c7cf1ac533a48526dce61b4aaf9f673f.bindPopup(popup_2a68f54c1627cd521d2f1423b47f9c65)
+        ;
+
+        
+    
+    
+            var marker_80e9fc2d6d9aaf4334046239d799dc83 = L.marker(
+                [35.62969, -83.3864],
+                {}
+            ).addTo(map_65fe3ef85ecee7b277490c7beb0fcb04);
+        
+    
+            var beautify_icon_2c029611d36cfd92016a634feb84a6ce = new L.BeautifyIcon.icon(
+                {"backgroundColor": "#FFF", "borderColor": "#CD7F32", "borderWidth": 3, "icon": "house", "innerIconStyle": "margin-top:0;", "isAlphaNumericIcon": false, "spin": false, "textColor": "#00ABDC"}
+            )
+            marker_80e9fc2d6d9aaf4334046239d799dc83.setIcon(beautify_icon_2c029611d36cfd92016a634feb84a6ce);
+        
+    
+        var popup_34a9d4b8f1a2f2d8494abaab3a1de69e = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_068f1319a290802f71efd94b635ae44a = $(`<div id="html_068f1319a290802f71efd94b635ae44a" style="width: 100.0%; height: 100.0%;"><b>Shelter:</b> Icewater Spring Shelter<br><b>Emotion:</b> joy<br><b>Rank:</b> 4<br><b>Percentage of Emotion in a 5 mile radius:</b> 49.09%<br><b>Total Entries: 55</b></div>`)[0];
+                popup_34a9d4b8f1a2f2d8494abaab3a1de69e.setContent(html_068f1319a290802f71efd94b635ae44a);
+            
+        
+
+        marker_80e9fc2d6d9aaf4334046239d799dc83.bindPopup(popup_34a9d4b8f1a2f2d8494abaab3a1de69e)
+        ;
+
+        
+    
+    
+            var marker_ec2102ec23ebe15f57e705d42614464a = L.marker(
+                [41.27167, -74.5163],
+                {}
+            ).addTo(map_65fe3ef85ecee7b277490c7beb0fcb04);
+        
+    
+            var beautify_icon_aeb849aaff2e8577875a89cff667a097 = new L.BeautifyIcon.icon(
+                {"backgroundColor": "#FFF", "borderColor": "#CD7F32", "borderWidth": 3, "icon": "house", "innerIconStyle": "margin-top:0;", "isAlphaNumericIcon": false, "spin": false, "textColor": "#00ABDC"}
+            )
+            marker_ec2102ec23ebe15f57e705d42614464a.setIcon(beautify_icon_aeb849aaff2e8577875a89cff667a097);
+        
+    
+        var popup_7a733c3bfccafbf2b5daf9459a00cac9 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_ba8127f720f8081c03948ff74d3c0b5b = $(`<div id="html_ba8127f720f8081c03948ff74d3c0b5b" style="width: 100.0%; height: 100.0%;"><b>Shelter:</b> Pochuck Mountain Shelter<br><b>Emotion:</b> joy<br><b>Rank:</b> 5<br><b>Percentage of Emotion in a 5 mile radius:</b> 48.65%<br><b>Total Entries: 37</b></div>`)[0];
+                popup_7a733c3bfccafbf2b5daf9459a00cac9.setContent(html_ba8127f720f8081c03948ff74d3c0b5b);
+            
+        
+
+        marker_ec2102ec23ebe15f57e705d42614464a.bindPopup(popup_7a733c3bfccafbf2b5daf9459a00cac9)
+        ;
+
+        
+    
+    
+            var marker_b1f06d40d1f39cd3f26f505e04a9ae72 = L.marker(
+                [41.7786, -73.4198],
+                {}
+            ).addTo(map_65fe3ef85ecee7b277490c7beb0fcb04);
+        
+    
+            var beautify_icon_452b170368f587352d7642119ec1b089 = new L.BeautifyIcon.icon(
+                {"backgroundColor": "#FFF", "borderColor": "#CD7F32", "borderWidth": 3, "icon": "house", "innerIconStyle": "margin-top:0;", "isAlphaNumericIcon": false, "spin": false, "textColor": "#00ABDC"}
+            )
+            marker_b1f06d40d1f39cd3f26f505e04a9ae72.setIcon(beautify_icon_452b170368f587352d7642119ec1b089);
+        
+    
+        var popup_226bd276584b2fef175f881bcde9377d = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_97b24fed5953d25fa6c7959fdf71710e = $(`<div id="html_97b24fed5953d25fa6c7959fdf71710e" style="width: 100.0%; height: 100.0%;"><b>Shelter:</b> Stewart Hollow Brook Shelter<br><b>Emotion:</b> joy<br><b>Rank:</b> 6<br><b>Percentage of Emotion in a 5 mile radius:</b> 47.37%<br><b>Total Entries: 19</b></div>`)[0];
+                popup_226bd276584b2fef175f881bcde9377d.setContent(html_97b24fed5953d25fa6c7959fdf71710e);
+            
+        
+
+        marker_b1f06d40d1f39cd3f26f505e04a9ae72.bindPopup(popup_226bd276584b2fef175f881bcde9377d)
+        ;
+
+        
+    
+    
+            var marker_2235df397864b91011b6673ad0f6370d = L.marker(
+                [40.11192, -77.1043],
+                {}
+            ).addTo(map_65fe3ef85ecee7b277490c7beb0fcb04);
+        
+    
+            var beautify_icon_056cd245cbb922673da488cb3a31f0e4 = new L.BeautifyIcon.icon(
+                {"backgroundColor": "#FFF", "borderColor": "#CD7F32", "borderWidth": 3, "icon": "house", "innerIconStyle": "margin-top:0;", "isAlphaNumericIcon": false, "spin": false, "textColor": "#00ABDC"}
+            )
+            marker_2235df397864b91011b6673ad0f6370d.setIcon(beautify_icon_056cd245cbb922673da488cb3a31f0e4);
+        
+    
+        var popup_8606c497513bc66bc98a128d38fc6a52 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_505a5294996b2f99120752c147e8b90e = $(`<div id="html_505a5294996b2f99120752c147e8b90e" style="width: 100.0%; height: 100.0%;"><b>Shelter:</b> Alec Kennedy Shelter<br><b>Emotion:</b> joy<br><b>Rank:</b> 7<br><b>Percentage of Emotion in a 5 mile radius:</b> 47.06%<br><b>Total Entries: 17</b></div>`)[0];
+                popup_8606c497513bc66bc98a128d38fc6a52.setContent(html_505a5294996b2f99120752c147e8b90e);
+            
+        
+
+        marker_2235df397864b91011b6673ad0f6370d.bindPopup(popup_8606c497513bc66bc98a128d38fc6a52)
+        ;
+
+        
+    
+    
+            var marker_6034e746f911287cfc04c2b7987b6b3c = L.marker(
+                [40.39222, -76.994],
+                {}
+            ).addTo(map_65fe3ef85ecee7b277490c7beb0fcb04);
+        
+    
+            var beautify_icon_de1c24ccfdc8b27d438b75dec174c904 = new L.BeautifyIcon.icon(
+                {"backgroundColor": "#FFF", "borderColor": "#CD7F32", "borderWidth": 3, "icon": "house", "innerIconStyle": "margin-top:0;", "isAlphaNumericIcon": false, "spin": false, "textColor": "#00ABDC"}
+            )
+            marker_6034e746f911287cfc04c2b7987b6b3c.setIcon(beautify_icon_de1c24ccfdc8b27d438b75dec174c904);
+        
+    
+        var popup_ff15c7c08aec0d23408c7d2827841849 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_a7a21cadbf5279ca138b9d689d91909b = $(`<div id="html_a7a21cadbf5279ca138b9d689d91909b" style="width: 100.0%; height: 100.0%;"><b>Shelter:</b> Clarks Ferry Shelter<br><b>Emotion:</b> joy<br><b>Rank:</b> 8<br><b>Percentage of Emotion in a 5 mile radius:</b> 46.88%<br><b>Total Entries: 32</b></div>`)[0];
+                popup_ff15c7c08aec0d23408c7d2827841849.setContent(html_a7a21cadbf5279ca138b9d689d91909b);
+            
+        
+
+        marker_6034e746f911287cfc04c2b7987b6b3c.bindPopup(popup_ff15c7c08aec0d23408c7d2827841849)
+        ;
+
+        
+    
+    
+            var marker_373a37f2d34726977aa4c0a2217970c2 = L.marker(
+                [37.81893, -79.1551],
+                {}
+            ).addTo(map_65fe3ef85ecee7b277490c7beb0fcb04);
+        
+    
+            var beautify_icon_b300e088128df1702e325b0a3e09864b = new L.BeautifyIcon.icon(
+                {"backgroundColor": "#FFF", "borderColor": "#CD7F32", "borderWidth": 3, "icon": "house", "innerIconStyle": "margin-top:0;", "isAlphaNumericIcon": false, "spin": false, "textColor": "#00ABDC"}
+            )
+            marker_373a37f2d34726977aa4c0a2217970c2.setIcon(beautify_icon_b300e088128df1702e325b0a3e09864b);
+        
+    
+        var popup_ef54b34dbecf32d3b19899c11e8c0ca3 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_a9255fe55a8ebaa33bdb91342baf33f6 = $(`<div id="html_a9255fe55a8ebaa33bdb91342baf33f6" style="width: 100.0%; height: 100.0%;"><b>Shelter:</b> Seeley-Woodworth Shelter<br><b>Emotion:</b> joy<br><b>Rank:</b> 9<br><b>Percentage of Emotion in a 5 mile radius:</b> 46.43%<br><b>Total Entries: 28</b></div>`)[0];
+                popup_ef54b34dbecf32d3b19899c11e8c0ca3.setContent(html_a9255fe55a8ebaa33bdb91342baf33f6);
+            
+        
+
+        marker_373a37f2d34726977aa4c0a2217970c2.bindPopup(popup_ef54b34dbecf32d3b19899c11e8c0ca3)
+        ;
+
+        
+    
+    
+            var marker_1958768b384059c45c1354cea4782e10 = L.marker(
+                [37.39847, -79.8539],
+                {}
+            ).addTo(map_65fe3ef85ecee7b277490c7beb0fcb04);
+        
+    
+            var beautify_icon_4e47d080b3c2dcaa4dcd66fe4e385a2d = new L.BeautifyIcon.icon(
+                {"backgroundColor": "#FFF", "borderColor": "#CD7F32", "borderWidth": 3, "icon": "house", "innerIconStyle": "margin-top:0;", "isAlphaNumericIcon": false, "spin": false, "textColor": "#00ABDC"}
+            )
+            marker_1958768b384059c45c1354cea4782e10.setIcon(beautify_icon_4e47d080b3c2dcaa4dcd66fe4e385a2d);
+        
+    
+        var popup_5661357757c3209e7359b15d2c83b175 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_453b76c6a89674ef4af7eed22461c945 = $(`<div id="html_453b76c6a89674ef4af7eed22461c945" style="width: 100.0%; height: 100.0%;"><b>Shelter:</b> Fullhardt Knob Shelter<br><b>Emotion:</b> joy<br><b>Rank:</b> 10<br><b>Percentage of Emotion in a 5 mile radius:</b> 46.15%<br><b>Total Entries: 65</b></div>`)[0];
+                popup_5661357757c3209e7359b15d2c83b175.setContent(html_453b76c6a89674ef4af7eed22461c945);
+            
+        
+
+        marker_1958768b384059c45c1354cea4782e10.bindPopup(popup_5661357757c3209e7359b15d2c83b175)
+        ;
+
+        
+    
+</script>
+</html>

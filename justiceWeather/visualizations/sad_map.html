@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_9f9a398bf6b0d8ee1ddd715c10a6a307 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+    <script src="https://cdn.jsdelivr.net/gh/marslan390/BeautifyMarker/leaflet-beautify-marker-icon.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/marslan390/BeautifyMarker/leaflet-beautify-marker-icon.min.css"/>
+</head>
+<body>
+    
+    <h3 align="center" style="font-size:16px"><b>Top 10 locations for emotion: sadness</b></h3>
+    
+        <div style="position: fixed;
+                    bottom: 50px; right: 50px; width: 450px; height: 250px;
+                    border:2px solid grey; z-index:9999; font-size:20px;
+                    ">&nbsp; <b>Legend</b> <br>
+                        &nbsp; 1. Rice Field Shelter, Virginia <br>
+                        &nbsp; 2. Bromley Shelter, Vermont <br>
+                        &nbsp; 3. Gooch Mountain Shelter, Georgia <br>
+        </div>
+        
+    
+            <div class="folium-map" id="map_9f9a398bf6b0d8ee1ddd715c10a6a307" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_9f9a398bf6b0d8ee1ddd715c10a6a307 = L.map(
+                "map_9f9a398bf6b0d8ee1ddd715c10a6a307",
+                {
+                    center: [41.90722, -70.0369],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 5,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_eb8541e6029d9ab33761d62984fc4731 = L.tileLayer(
+                "https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca target=\"_blank\" href=\"http://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca target=\"_blank\" href=\"http://cartodb.com/attributions\"\u003eCartoDB\u003c/a\u003e, CartoDB \u003ca target=\"_blank\" href =\"http://cartodb.com/attributions\"\u003eattributions\u003c/a\u003e", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_9f9a398bf6b0d8ee1ddd715c10a6a307);
+        
+    
+            var marker_ff36fbbbc8a2703c42a3c4c0c3856399 = L.marker(
+                [37.37479, -80.7586],
+                {}
+            ).addTo(map_9f9a398bf6b0d8ee1ddd715c10a6a307);
+        
+    
+            var beautify_icon_6e3407bf602a177e06ab14e3c774a0f9 = new L.BeautifyIcon.icon(
+                {"backgroundColor": "#FFF", "borderColor": "#FFD700", "borderWidth": 3, "iconSize": [40, 40], "innerIconStyle": "margin-top:0; font-size: 20px", "isAlphaNumericIcon": true, "spin": false, "text": 1, "textColor": "#00ABDC"}
+            )
+            marker_ff36fbbbc8a2703c42a3c4c0c3856399.setIcon(beautify_icon_6e3407bf602a177e06ab14e3c774a0f9);
+        
+    
+        var popup_ca83cb7abaf0347c74a58ca3aa256758 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_f2765d3294f4292a2b68cd43f076cc68 = $(`<div id="html_f2765d3294f4292a2b68cd43f076cc68" style="width: 100.0%; height: 100.0%;"><b>Shelter:</b> Rice Field Shelter<br><b>Emotion:</b> sadness<br><b>Rank:</b> 1<br><b>Percentage of Emotion in a 5 mile radius:</b> 40.74%<br><b>Total Entries: 27</b></div>`)[0];
+                popup_ca83cb7abaf0347c74a58ca3aa256758.setContent(html_f2765d3294f4292a2b68cd43f076cc68);
+            
+        
+
+        marker_ff36fbbbc8a2703c42a3c4c0c3856399.bindPopup(popup_ca83cb7abaf0347c74a58ca3aa256758)
+        ;
+
+        
+    
+    
+            var marker_25ef371094f9d5f7363d057934f19d4c = L.marker(
+                [43.2395, -72.9372],
+                {}
+            ).addTo(map_9f9a398bf6b0d8ee1ddd715c10a6a307);
+        
+    
+            var beautify_icon_eba13f0db9b7cc9185daf539f7f9bc4c = new L.BeautifyIcon.icon(
+                {"backgroundColor": "#FFF", "borderColor": "#C0C0C0", "borderWidth": 3, "iconSize": [41, 41], "innerIconStyle": "margin-top:0; font-size: 20px", "isAlphaNumericIcon": true, "spin": false, "text": 2, "textColor": "#00ABDC"}
+            )
+            marker_25ef371094f9d5f7363d057934f19d4c.setIcon(beautify_icon_eba13f0db9b7cc9185daf539f7f9bc4c);
+        
+    
+        var popup_aab2891290aa83ff19417d4227ef60df = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_989d310dbd2a301ee7396df956488709 = $(`<div id="html_989d310dbd2a301ee7396df956488709" style="width: 100.0%; height: 100.0%;"><b>Shelter:</b> Bromley Shelter<br><b>Emotion:</b> sadness<br><b>Rank:</b> 2<br><b>Percentage of Emotion in a 5 mile radius:</b> 30.23%<br><b>Total Entries: 43</b></div>`)[0];
+                popup_aab2891290aa83ff19417d4227ef60df.setContent(html_989d310dbd2a301ee7396df956488709);
+            
+        
+
+        marker_25ef371094f9d5f7363d057934f19d4c.bindPopup(popup_aab2891290aa83ff19417d4227ef60df)
+        ;
+
+        
+    
+    
+            var marker_cd767ef91b94879f781c57283423c28d = L.marker(
+                [34.6532, -84.0343],
+                {}
+            ).addTo(map_9f9a398bf6b0d8ee1ddd715c10a6a307);
+        
+    
+            var beautify_icon_aa6633d8d038e72864431eab4a69ddbf = new L.BeautifyIcon.icon(
+                {"backgroundColor": "#FFF", "borderColor": "#CD7F32", "borderWidth": 3, "iconSize": [41, 41], "innerIconStyle": "margin-top:0; font-size: 20px", "isAlphaNumericIcon": true, "spin": false, "text": 3, "textColor": "#00ABDC"}
+            )
+            marker_cd767ef91b94879f781c57283423c28d.setIcon(beautify_icon_aa6633d8d038e72864431eab4a69ddbf);
+        
+    
+        var popup_4b4324fff2f6f018ccca2479a70c39a6 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_4124a3d8b89c833b5c33e0e93429c84b = $(`<div id="html_4124a3d8b89c833b5c33e0e93429c84b" style="width: 100.0%; height: 100.0%;"><b>Shelter:</b> Gooch Mountain Shelter<br><b>Emotion:</b> sadness<br><b>Rank:</b> 3<br><b>Percentage of Emotion in a 5 mile radius:</b> 30.14%<br><b>Total Entries: 73</b></div>`)[0];
+                popup_4b4324fff2f6f018ccca2479a70c39a6.setContent(html_4124a3d8b89c833b5c33e0e93429c84b);
+            
+        
+
+        marker_cd767ef91b94879f781c57283423c28d.bindPopup(popup_4b4324fff2f6f018ccca2479a70c39a6)
+        ;
+
+        
+    
+    
+            var marker_c6ecb7518d23d1cc79f999324e427e05 = L.marker(
+                [37.42209, -80.6088],
+                {}
+            ).addTo(map_9f9a398bf6b0d8ee1ddd715c10a6a307);
+        
+    
+            var beautify_icon_0a34d4b335f00fcf06b1191a9b4a26ed = new L.BeautifyIcon.icon(
+                {"backgroundColor": "#FFF", "borderColor": "#CD7F32", "borderWidth": 3, "icon": "house", "innerIconStyle": "margin-top:0;", "isAlphaNumericIcon": false, "spin": false, "textColor": "#00ABDC"}
+            )
+            marker_c6ecb7518d23d1cc79f999324e427e05.setIcon(beautify_icon_0a34d4b335f00fcf06b1191a9b4a26ed);
+        
+    
+        var popup_a624defba1323730c7d951b00571771a = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_c1d79a6e8dade21ee8b26620ae7bb03a = $(`<div id="html_c1d79a6e8dade21ee8b26620ae7bb03a" style="width: 100.0%; height: 100.0%;"><b>Shelter:</b> Pine Swamp Branch Shelter<br><b>Emotion:</b> sadness<br><b>Rank:</b> 4<br><b>Percentage of Emotion in a 5 mile radius:</b> 29.79%<br><b>Total Entries: 47</b></div>`)[0];
+                popup_a624defba1323730c7d951b00571771a.setContent(html_c1d79a6e8dade21ee8b26620ae7bb03a);
+            
+        
+
+        marker_c6ecb7518d23d1cc79f999324e427e05.bindPopup(popup_a624defba1323730c7d951b00571771a)
+        ;
+
+        
+    
+    
+            var marker_ecc5aca050fdae6218f2e26998099a8f = L.marker(
+                [37.40086, -80.5772],
+                {}
+            ).addTo(map_9f9a398bf6b0d8ee1ddd715c10a6a307);
+        
+    
+            var beautify_icon_655899732d23a4ccf495d6fe1640340f = new L.BeautifyIcon.icon(
+                {"backgroundColor": "#FFF", "borderColor": "#CD7F32", "borderWidth": 3, "icon": "house", "innerIconStyle": "margin-top:0;", "isAlphaNumericIcon": false, "spin": false, "textColor": "#00ABDC"}
+            )
+            marker_ecc5aca050fdae6218f2e26998099a8f.setIcon(beautify_icon_655899732d23a4ccf495d6fe1640340f);
+        
+    
+        var popup_378cf3e898ad887df2e7e4fb67ff6fbe = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_488bca46647cc3838335fa8f1a3fd447 = $(`<div id="html_488bca46647cc3838335fa8f1a3fd447" style="width: 100.0%; height: 100.0%;"><b>Shelter:</b> Bailey Gap Shelter<br><b>Emotion:</b> sadness<br><b>Rank:</b> 5<br><b>Percentage of Emotion in a 5 mile radius:</b> 29.79%<br><b>Total Entries: 47</b></div>`)[0];
+                popup_378cf3e898ad887df2e7e4fb67ff6fbe.setContent(html_488bca46647cc3838335fa8f1a3fd447);
+            
+        
+
+        marker_ecc5aca050fdae6218f2e26998099a8f.bindPopup(popup_378cf3e898ad887df2e7e4fb67ff6fbe)
+        ;
+
+        
+    
+    
+            var marker_b934b2efc8688ffa764d914ad41c47db = L.marker(
+                [39.5425, -77.6024],
+                {}
+            ).addTo(map_9f9a398bf6b0d8ee1ddd715c10a6a307);
+        
+    
+            var beautify_icon_38ba9a7267ead03ca1bf7c08d27145e8 = new L.BeautifyIcon.icon(
+                {"backgroundColor": "#FFF", "borderColor": "#CD7F32", "borderWidth": 3, "icon": "house", "innerIconStyle": "margin-top:0;", "isAlphaNumericIcon": false, "spin": false, "textColor": "#00ABDC"}
+            )
+            marker_b934b2efc8688ffa764d914ad41c47db.setIcon(beautify_icon_38ba9a7267ead03ca1bf7c08d27145e8);
+        
+    
+        var popup_fac0dc0df307b9294d2bb357a2c234f4 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_f763593c0b5e18d1f9fd0524f3534b2c = $(`<div id="html_f763593c0b5e18d1f9fd0524f3534b2c" style="width: 100.0%; height: 100.0%;"><b>Shelter:</b> Pine Knob Shelter<br><b>Emotion:</b> sadness<br><b>Rank:</b> 6<br><b>Percentage of Emotion in a 5 mile radius:</b> 29.79%<br><b>Total Entries: 47</b></div>`)[0];
+                popup_fac0dc0df307b9294d2bb357a2c234f4.setContent(html_f763593c0b5e18d1f9fd0524f3534b2c);
+            
+        
+
+        marker_b934b2efc8688ffa764d914ad41c47db.bindPopup(popup_fac0dc0df307b9294d2bb357a2c234f4)
+        ;
+
+        
+    
+    
+            var marker_2a92bf06ee1bde1f3a505cebd7f1bb14 = L.marker(
+                [40.11192, -77.1043],
+                {}
+            ).addTo(map_9f9a398bf6b0d8ee1ddd715c10a6a307);
+        
+    
+            var beautify_icon_6cc654b2ddee30a0c9575b341ac6759b = new L.BeautifyIcon.icon(
+                {"backgroundColor": "#FFF", "borderColor": "#CD7F32", "borderWidth": 3, "icon": "house", "innerIconStyle": "margin-top:0;", "isAlphaNumericIcon": false, "spin": false, "textColor": "#00ABDC"}
+            )
+            marker_2a92bf06ee1bde1f3a505cebd7f1bb14.setIcon(beautify_icon_6cc654b2ddee30a0c9575b341ac6759b);
+        
+    
+        var popup_77403dcf6691898b149ffd683332a783 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_d4f9bfdd9ed55523e45921849acc649c = $(`<div id="html_d4f9bfdd9ed55523e45921849acc649c" style="width: 100.0%; height: 100.0%;"><b>Shelter:</b> Alec Kennedy Shelter<br><b>Emotion:</b> sadness<br><b>Rank:</b> 7<br><b>Percentage of Emotion in a 5 mile radius:</b> 29.41%<br><b>Total Entries: 17</b></div>`)[0];
+                popup_77403dcf6691898b149ffd683332a783.setContent(html_d4f9bfdd9ed55523e45921849acc649c);
+            
+        
+
+        marker_2a92bf06ee1bde1f3a505cebd7f1bb14.bindPopup(popup_77403dcf6691898b149ffd683332a783)
+        ;
+
+        
+    
+    
+            var marker_cce24e7e11919e74310fb4de7883adc1 = L.marker(
+                [37.98564, -78.8839],
+                {}
+            ).addTo(map_9f9a398bf6b0d8ee1ddd715c10a6a307);
+        
+    
+            var beautify_icon_4761539acfea9caa8bba4c4827d9b3d9 = new L.BeautifyIcon.icon(
+                {"backgroundColor": "#FFF", "borderColor": "#CD7F32", "borderWidth": 3, "icon": "house", "innerIconStyle": "margin-top:0;", "isAlphaNumericIcon": false, "spin": false, "textColor": "#00ABDC"}
+            )
+            marker_cce24e7e11919e74310fb4de7883adc1.setIcon(beautify_icon_4761539acfea9caa8bba4c4827d9b3d9);
+        
+    
+        var popup_1eee09e9b267c2b952e8596f8ed51821 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_19ff4f121105b067a85e184190334cc4 = $(`<div id="html_19ff4f121105b067a85e184190334cc4" style="width: 100.0%; height: 100.0%;"><b>Shelter:</b> Paul C. Wolfe Shelter<br><b>Emotion:</b> sadness<br><b>Rank:</b> 8<br><b>Percentage of Emotion in a 5 mile radius:</b> 29.17%<br><b>Total Entries: 24</b></div>`)[0];
+                popup_1eee09e9b267c2b952e8596f8ed51821.setContent(html_19ff4f121105b067a85e184190334cc4);
+            
+        
+
+        marker_cce24e7e11919e74310fb4de7883adc1.bindPopup(popup_1eee09e9b267c2b952e8596f8ed51821)
+        ;
+
+        
+    
+    
+            var marker_59a5cadeb5717cb58dece53b8badd805 = L.marker(
+                [36.10417, -82.397],
+                {}
+            ).addTo(map_9f9a398bf6b0d8ee1ddd715c10a6a307);
+        
+    
+            var beautify_icon_d2a662c895f9ff6b1a2fdd714eb58157 = new L.BeautifyIcon.icon(
+                {"backgroundColor": "#FFF", "borderColor": "#CD7F32", "borderWidth": 3, "icon": "house", "innerIconStyle": "margin-top:0;", "isAlphaNumericIcon": false, "spin": false, "textColor": "#00ABDC"}
+            )
+            marker_59a5cadeb5717cb58dece53b8badd805.setIcon(beautify_icon_d2a662c895f9ff6b1a2fdd714eb58157);
+        
+    
+        var popup_c106647fc3c2af550936354541b6c316 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_27b2e7845720dc39b72c8287ecf46c2e = $(`<div id="html_27b2e7845720dc39b72c8287ecf46c2e" style="width: 100.0%; height: 100.0%;"><b>Shelter:</b> Curley Maple Gap Shelter<br><b>Emotion:</b> sadness<br><b>Rank:</b> 9<br><b>Percentage of Emotion in a 5 mile radius:</b> 28.57%<br><b>Total Entries: 56</b></div>`)[0];
+                popup_c106647fc3c2af550936354541b6c316.setContent(html_27b2e7845720dc39b72c8287ecf46c2e);
+            
+        
+
+        marker_59a5cadeb5717cb58dece53b8badd805.bindPopup(popup_c106647fc3c2af550936354541b6c316)
+        ;
+
+        
+    
+    
+            var marker_a0e46e0b1c370a1890b9e70a42e592f3 = L.marker(
+                [37.15498, -80.9803],
+                {}
+            ).addTo(map_9f9a398bf6b0d8ee1ddd715c10a6a307);
+        
+    
+            var beautify_icon_71fe7b153232e2a885706d612d5a3eb3 = new L.BeautifyIcon.icon(
+                {"backgroundColor": "#FFF", "borderColor": "#CD7F32", "borderWidth": 3, "icon": "house", "innerIconStyle": "margin-top:0;", "isAlphaNumericIcon": false, "spin": false, "textColor": "#00ABDC"}
+            )
+            marker_a0e46e0b1c370a1890b9e70a42e592f3.setIcon(beautify_icon_71fe7b153232e2a885706d612d5a3eb3);
+        
+    
+        var popup_5486841aae8df7ad200a8fb2c54b923e = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_045707a7c209df07ff7bcb31461ba72d = $(`<div id="html_045707a7c209df07ff7bcb31461ba72d" style="width: 100.0%; height: 100.0%;"><b>Shelter:</b> Jenny Knob Shelter<br><b>Emotion:</b> sadness<br><b>Rank:</b> 10<br><b>Percentage of Emotion in a 5 mile radius:</b> 28.21%<br><b>Total Entries: 39</b></div>`)[0];
+                popup_5486841aae8df7ad200a8fb2c54b923e.setContent(html_045707a7c209df07ff7bcb31461ba72d);
+            
+        
+
+        marker_a0e46e0b1c370a1890b9e70a42e592f3.bindPopup(popup_5486841aae8df7ad200a8fb2c54b923e)
+        ;
+
+        
+    
+</script>
+</html>
