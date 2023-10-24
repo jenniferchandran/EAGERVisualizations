@@ -363,19 +363,21 @@ def contains_alpha(string) -> bool:
     return False
 
 
-def load_raw_data_to_df(directory_path):
+def load_raw_data_to_df(directory_path, version_number=3):
     file_names = os.listdir(directory_path)
 
     xlsx_file_names = [
         f
-        for f in os.listdir(directory_path)
-        if os.path.isfile(os.path.join(directory_path, f)) and f.endswith(".xlsx")
+        for f in file_names
+        if os.path.isfile(os.path.join(directory_path, f))
+        and f.endswith(".xlsx")
+        and f"v{version_number}" in f
     ]
 
     full_df = pd.DataFrame()
     for filename in xlsx_file_names:
         data = pd.read_excel(directory_path + "/" + filename)
-        data["year"] = int(filename.split(".")[0])
+        data["year"] = int(filename.split(".")[0].split("_")[0])
         if filename == "2016.xlsx":
             data.rename(columns={"Date": "date"}, inplace=True)
         full_df = pd.concat([full_df, data])

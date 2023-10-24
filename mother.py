@@ -26,25 +26,14 @@ def add_density(df, radius):
     )
 
 
-raw_df_v1 = load_raw_data_to_df("raw_trail_journal_data/xlsx")
-raw_df_v2 = load_raw_data_to_df("raw_trail_journal_data")
-
-# print each column and a random sample of 5 rows from each in raw_df_v1 and raw_df_v2 side by side
-for col in raw_df_v1.columns:
-    print(col)
-    print(raw_df_v1[col].sample(5))
-    print(raw_df_v2[col].sample(5))
-    print("")
-
-
-# print("starting to load data")
-# raw_df = load_raw_data_to_df("raw_trail_journal_data/xlsx")
-# print("finished loading data")
-# # print(raw_df)
-# print("starting to update lat lon day month")
-# full_df = update_lat_lon_day_month_in_df(raw_df, 95)
-# print("finished updating lat lon day month")
-# # print(full_df)
+print("starting to load data")
+raw_df = load_raw_data_to_df("raw_trail_journal_data/xlsx")
+print("finished loading data")
+# print(raw_df)
+print("starting to update lat lon day month")
+full_df = update_lat_lon_day_month_in_df(raw_df, 95)
+print("finished updating lat lon day month")
+print(full_df)
 
 # print("starting to add density")
 # add_density(full_df, 10)
