@@ -3,26 +3,6 @@ import pandas as pd
 from utility.util import *
 
 
-def load_raw_data_to_df(directory_path):
-    file_names = os.listdir(directory_path)
-
-    xlsx_file_names = [
-        f
-        for f in os.listdir(directory_path)
-        if os.path.isfile(os.path.join(directory_path, f)) and f.endswith(".xlsx")
-    ]
-
-    full_df = pd.DataFrame()
-    for filename in xlsx_file_names:
-        data = pd.read_excel(directory_path + "/" + filename)
-        data["year"] = int(filename.split(".")[0])
-        if filename == "2016.xlsx":
-            data.rename(columns={"Date": "date"}, inplace=True)
-        full_df = pd.concat([full_df, data])
-
-    return full_df
-
-
 def update_lat_lon_day_month_in_df(df, sensitivity):
     df["day"] = df["date"].apply(get_day_from_date)
     df["month"] = df["date"].apply(get_month_from_date)

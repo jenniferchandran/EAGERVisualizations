@@ -1,5 +1,6 @@
 import datetime
 import json
+import os
 from thefuzz import fuzz
 from thefuzz import process
 import pandas as pd
@@ -269,7 +270,7 @@ def count_entries_within_radius(
     target_lon, target_lat, radius_miles, currYear, currMonth, df
 ):
     if currMonth <= 0:
-        print("curr month == {currMonth} is not valid")
+        print(f"curr month == {currMonth} is not valid")
         return -1
     if (
         target_lat == None
@@ -360,3 +361,23 @@ def contains_alpha(string) -> bool:
             print(f"string is {string} and is type string, but its numeric")
             return True
     return False
+
+
+def load_raw_data_to_df(directory_path):
+    file_names = os.listdir(directory_path)
+
+    xlsx_file_names = [
+        f
+        for f in os.listdir(directory_path)
+        if os.path.isfile(os.path.join(directory_path, f)) and f.endswith(".xlsx")
+    ]
+
+    full_df = pd.DataFrame()
+    for filename in xlsx_file_names:
+        data = pd.read_excel(directory_path + "/" + filename)
+        data["year"] = int(filename.split(".")[0])
+        if filename == "2016.xlsx":
+            data.rename(columns={"Date": "date"}, inplace=True)
+        full_df = pd.concat([full_df, data])
+
+    return full_df
