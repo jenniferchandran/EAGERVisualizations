@@ -47,7 +47,7 @@ def add_density(df, radius):
 
 
 print("starting to load data")
-raw_df = load_raw_data_to_df("raw_trail_journal_data")
+raw_df = load_raw_data_to_df("raw_trail_journal_data/xlsx")
 print("finished loading data")
 # print(raw_df)
 print("starting to update lat lon day month")
