@@ -14,6 +14,7 @@ from utility.testingAPIKeyValidity import testKeys
 # TODO have a static bar that changes over time with months and years
 # TODO DO FIRST ->>>>>> start doing sentiment with trips
 # TODO add a way to show all the trips
+# TODO fix the year issue
 
 
 # remove all spaces from a string then make it lowercase
@@ -135,14 +136,14 @@ def main(apiKeys):
         print("sleep over")
 
         file_paths = [
-            "2016.xlsx",
-            "2017.xlsx",
-            "2018.xlsx",
-            "2019.xlsx",
-            "2020.xlsx",
-            "2021.xlsx",
-            "2022.xlsx",
-            "2023.xlsx",
+            "2016_v3.xlsx",
+            "2017_v3.xlsx",
+            "2018_v3.xlsx",
+            "2019_v3.xlsx",
+            "2020_v3.xlsx",
+            "2021_v3.xlsx",
+            "2022_v3.xlsx",
+            "2023_v3.xlsx",
         ]
 
         # reverse the file path in place
@@ -163,9 +164,8 @@ def main(apiKeys):
         df = pd.DataFrame()
         print("Loading excel files...")
         for file_path in file_paths:
-            relative_file_path = "inputData/" + file_path
+            relative_file_path = "../raw_trail_journal_data/xlsx/" + file_path
             data = pd.read_excel(relative_file_path)
-            data["year"] = file_path.split(".")[0]
             if file_path == "2016.xlsx":
                 df.rename(columns={"Date": "date"}, inplace=True)
             df = pd.concat([df, data])

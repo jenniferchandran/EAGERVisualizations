@@ -6,12 +6,15 @@ from thefuzz import process
 import pandas as pd
 
 
+# TODO fix snow in cleaning weather
+
+
 def removeSpaces(string):
     string = string.lower()
     return string
 
 
-def convertDateToTimestamp(date, currYear):
+def convertDateToTimestamp(date, currYear, Print=False):
     date = date.split(",")
     date = date[0].split(" ")
     month = date[0]
@@ -42,7 +45,8 @@ def convertDateToTimestamp(date, currYear):
     elif month == "Dec":
         monthNum = 12
     else:
-        print("Error: month is not in the range of Jan-Dec")
+        if Print:
+            print("Error: month is not in the range of Jan-Dec")
         return -1
 
     try:
@@ -50,15 +54,18 @@ def convertDateToTimestamp(date, currYear):
         # add checking to the range of day to make sure its valid for its month
         if month in "JanMarMayJulAugOctDec":
             if day > 31:
-                print("Error: day is not in the range of 1-31")
+                if Print:
+                    print("Error: day is not in the range of 1-31")
                 return -1
         elif month in "AprJunSepNov":
             if day > 30:
-                print("Error: day is not in the range of 1-30")
+                if Print:
+                    print("Error: day is not in the range of 1-30")
                 return -1
         elif month == "Feb":
             if day > 28:
-                print("Error: day is not in the range of 1-28")
+                if Print:
+                    print("Error: day is not in the range of 1-28")
                 return -1
 
     except:
@@ -143,8 +150,8 @@ def get_day_from_date(date):
     return int(day)
 
 
-def get_month_from_date(date):
-    if is_valid_date(date) == False:
+def get_month_from_date(date, Print=False):
+    if not is_valid_date(date, Print=Print):
         return -1
     date = date.split(" ")
     month = date[0]
@@ -173,26 +180,25 @@ def get_month_from_date(date):
     elif month == "Dec":
         return 12
     else:
-        print(
-            f"Erorr: month is not in the range of Jan-Dec -> (date: {date}) -> (month: {month})"
-        )
+        if Print:
+            print(
+                f"Erorr: month is not in the range of Jan-Dec -> (date: {date}) -> (month: {month})"
+            )
         return -1
 
 
 def update_locations(df, sensitivity, Print=False):
     shelter_data = json.load(open("justiceWeather/inputData/shelter_data.json"))
-
     weather_data = json.load(open("justiceWeather/weather_data.json"))
 
     count = 0
     total = 0
     already_had = 0
-    # loop over all the rows in the df
+
     for index, row in df.iterrows():
         destination = row["Destination"]
 
         if row["Hiker Journal Link"] in weather_data:
-            # check to see if the latitude and longitude data in row we are on is nan or none or empty
             if pd.isna(row["Latitude"]) or pd.isna(row["Longitude"]):
                 if Print:
                     print(
@@ -202,8 +208,12 @@ def update_locations(df, sensitivity, Print=False):
                         f"keys in map = {weather_data[row['Hiker Journal Link']].keys()}"
                     )
                 if "lat" in weather_data[row["Hiker Journal Link"]]:
-                    row["Latitude"] = weather_data[row["Hiker Journal Link"]]["lat"]
-                    row["Longitude"] = weather_data[row["Hiker Journal Link"]]["lon"]
+                    df.at[index, "Latitude"] = weather_data[row["Hiker Journal Link"]][
+                        "lat"
+                    ]
+                    df.at[index, "Longitude"] = weather_data[row["Hiker Journal Link"]][
+                        "lon"
+                    ]
                     already_had += 1
 
         if (
@@ -217,7 +227,6 @@ def update_locations(df, sensitivity, Print=False):
                 print(f"bad destination name = {destination}")
             continue
 
-        # use pandas to check to see if the longitude row has information that isnt "" or is empty
         if pd.notna(row["Longitude"]) and row["Longitude"] != "":
             if Print:
                 print(
@@ -233,10 +242,6 @@ def update_locations(df, sensitivity, Print=False):
 
         best_match, score = fuzzy_match(destination, shelter_data.keys())
 
-        # print(
-        #     f"actual destination = {destination}, best_match = {best_match}, score = {score}"
-        # )
-
         if score >= sensitivity:
             if score != 100 and score < 97 and Print:
                 print(f"update! total -> {total}")
@@ -244,15 +249,30 @@ def update_locations(df, sensitivity, Print=False):
                     f"original destination = {destination}, best_match = {best_match}, score = {score}"
                 )
 
-            row["Latitude"] = shelter_data[best_match]["cordinates"]["latitude"]
-            row["Longitude"] = shelter_data[best_match]["cordinates"]["longitude"]
-            # if score != 100 and score < 97 and Print:
-            # print(f"new long = {row['Longitude']}, new lat = {row['Latitude']}")
+            df.at[index, "Latitude"] = shelter_data[best_match]["cordinates"]["latitude"]
+            df.at[index, "Longitude"] = shelter_data[best_match]["cordinates"][
+                "longitude"
+            ]
+            if score != 100 and score < 97 and Print:
+                print(
+                    f"new long = {df.at[index, 'Longitude']}, new lat = {df.at[index, 'Latitude']}"
+                )
             count += 1
+
+        if isinstance(row["Latitude"], float) or isinstance(row["Latitude"], int):
+            count_after_decimal = str(row["Latitude"])[::-1].find(".")
+            if count_after_decimal < 2:
+                if Print:
+                    print(f"short lat = {row['Latitude']}")
+                df.at[index, "Latitude"] = -1
+                df.at[index, "Longitude"] = -1
+                if Print:
+                    print(f"new lat and long = {row['Latitude']}, {row['Longitude']}")
+
     if Print:
         print(f"final total == {total}")
         print(f"count == {count}")
-    return df
+        print(f"number of entries that are -1 {len(df[df['Latitude'] == -1])}")
 
 
 def convertMonthYearToMonthYear(monthYear):
@@ -267,11 +287,8 @@ def convertMonthAndYeartoMonthYear(month, year):
 
 
 def count_entries_within_radius(
-    target_lon, target_lat, radius_miles, currYear, currMonth, df
+    target_lon, target_lat, radius_miles, currYear, currMonth, df, Print=False
 ):
-    if currMonth <= 0:
-        print(f"curr month == {currMonth} is not valid")
-        return -1
     if (
         target_lat == None
         or target_lon == None
@@ -280,7 +297,10 @@ def count_entries_within_radius(
         or target_lat == -1
         or target_lon == -1
     ):
-        print("target lon == {target_lon} or target lat == {target_lat} is not valid")
+        if Print:
+            print(
+                f"target lon == {target_lon} or target lat == {target_lat} is not valid"
+            )
         return -1
     # Convert miles to degrees (roughly, considering Earth's radius)
     degrees_per_mile = 1 / 69  # Approximately
@@ -292,13 +312,14 @@ def count_entries_within_radius(
     min_lat = target_lat - radius_deg
     max_lat = target_lat + radius_deg
 
-    print(f"min_lon = {min_lon}")
-    print(f"max_lon = {max_lon}")
-    print(f"target_lon = {target_lon}")
-    print(f"target_lat = {target_lat}")
-    print(
-        f'type that is lon = {type(df["Longitude"].values[0])}, that value is {df["Longitude"].values[0]}'
-    )
+    if Print:
+        print(f"min_lon = {min_lon}")
+        print(f"max_lon = {max_lon}")
+        print(f"target_lon = {target_lon}")
+        print(f"target_lat = {target_lat}")
+        print(
+            f'type that is lon = {type(df["Longitude"].values[0])}, that value is {df["Longitude"].values[0]}'
+        )
 
     # Filter the DataFrame to get entries within the specified latitude and longitude bounds
     filtered_df = df[
@@ -350,15 +371,26 @@ def numTofullMonthName(num):
     }[num]
 
 
-def contains_alpha(string) -> bool:
-    if string != type("asd"):
-        return True
+def contains_alpha(string, Print=False) -> bool:
+    if Print:
+        print(f"input is {string} and is type {type(string)}")
+    # if string is a number or float
+    if isinstance(string, int) or isinstance(string, float):
+        # at this point we can assume that string is either a number or float, return false if the float is NaN
+        if string == float("NaN"):
+            if Print:
+                print(f"string is {string} and is type {type(string)}, but its NaN")
+            return True
+        return False
 
     for char in string:
         if char == ".":
             continue
         if char.isalpha():
-            print(f"string is {string} and is type string, but its numeric")
+            if Print:
+                print(
+                    f"string is {string} and is type string, but it has an alphabetical char"
+                )
             return True
     return False
 
@@ -383,3 +415,87 @@ def load_raw_data_to_df(directory_path, version_number=3):
         full_df = pd.concat([full_df, data])
 
     return full_df
+
+
+def convert_df_to_xlsx(df, filename):
+    df.to_excel("mother_data/" + filename + ".xlsx", index=False)
+
+
+def load_weather_data(Print=False):
+    weather_data = json.load(open("justiceWeather/weather_data.json"))
+    count = 0
+    cleaned_data = {}
+    for key in weather_data.keys():
+        if "cod" in weather_data[key]:
+            if Print:
+                print(f"deleting {key} that contains {weather_data[key]}")
+                print(" ")
+            count += 1
+        else:
+            cleaned_data[key] = weather_data[key]["data"][0]
+    if Print:
+        print(f"number of entries that were deleted = {count}")
+
+    cCount = 0
+    added_weather_data = {}
+    for key in cleaned_data.keys():
+        added_weather_data[key] = cleaned_data[key]
+
+        added_weather_data[key]["weather_description"] = "N/A"
+        added_weather_data[key]["weather_icon"] = "N/A"
+        added_weather_data[key]["weather_id"] = "N/A"
+        added_weather_data[key]["weather_main"] = "N/A"
+
+        if "weather" in added_weather_data[key]:
+            weather = added_weather_data[key]["weather"][0]
+            for weather_key in weather:
+                added_weather_data[key]["weather_" + weather_key] = weather[weather_key]
+            del added_weather_data[key]["weather"]
+
+        if "rain" in cleaned_data[key]:
+            rain = added_weather_data[key]["rain"]
+            added_weather_data[key]["rain"] = rain[list(rain.keys())[0]]
+            if Print:
+                print(f'rain = {added_weather_data[key]["rain"]}')
+        else:
+            added_weather_data[key]["rain"] = -1
+            if Print:
+                print(f'rain = {added_weather_data[key]["rain"]}')
+
+        # if "snow" in cleaned_data[key]:
+        #     rain = added_weather_data[key]["snow"]
+        #     added_weather_data[key]["snow"] = rain[list(snow.keys())[0]]
+        #     if Print:
+        #         print(f'snow = {added_weather_data[key]["snow"]}')
+        # else:
+        #     added_weather_data[key]["snow"] = -1
+        #     if Print:
+        #         print(f'snow = {added_weather_data[key]["snow"]}')
+
+    if Print:
+        print(f"number of entries that were deleted = {cCount}")
+    print(f"len of added weather data = {len(added_weather_data)}")
+
+    added_df = pd.DataFrame.from_dict(added_weather_data, orient="index")
+    added_df = added_df.reset_index()
+    added_df = added_df.rename(columns={"index": "Hiker Journal Link"})
+
+    # replace any nan values with -1
+    added_df = added_df.fillna(-1)
+
+    #
+
+    # rename the row called Name to Hiker Journal Link
+    return added_df
+
+
+def merge_weather_data(df, weather_df, Print=False):
+    if Print:
+        print(f"len of df = {len(df)}")
+        print(f"len of weather_df = {len(weather_df)}")
+    # if the link is not present in the weather df, set those columns to -1
+    merged_df = pd.merge(df, weather_df, on="Hiker Journal Link", how="outer")
+
+    if Print:
+        print(f"len of merged_df = {len(merged_df)}")
+    return merged_df
