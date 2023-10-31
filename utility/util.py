@@ -421,6 +421,10 @@ def convert_df_to_xlsx(df, filename):
     df.to_excel("mother_data/" + filename + ".xlsx", index=False)
 
 
+def convert_df_to_csv(df, filename):
+    df.to_csv("mother_data/" + filename + ".csv", index=False)
+
+
 def load_weather_data(Print=False):
     weather_data = json.load(open("justiceWeather/weather_data.json"))
     count = 0
