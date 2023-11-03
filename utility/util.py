@@ -190,7 +190,28 @@ def get_month_from_date(date, Print=False):
 def update_locations(df, sensitivity, Print=False):
     shelter_data = json.load(open("justiceWeather/inputData/shelter_data.json"))
     weather_data = json.load(open("justiceWeather/weather_data.json"))
+    # from the campsite data, csv file make a dictionary that maps the name of the campsite to its lat and lon
+    campsite_data = pd.read_csv("justiceWeather/inputData/campsite_data.csv")
+    # print the columns in the campsite data
+    if Print:
+        print(f"columns in campsite data = {campsite_data.columns}")
 
+    campsite_data = campsite_data[["Campsite Name", "Latitude", "Longitude"]]
+
+    # Convert DataFrame to the desired dictionary format
+    campsite_dict = {}
+
+    for index, row in campsite_data.iterrows():
+        campsite_name = row["Campsite Name"]
+        latitude = row["Latitude"]
+        longitude = row["Longitude"]
+
+        # Construct the nested dictionary
+        nested_dict = {"Latitude": latitude, "Longitude": longitude}
+
+        # Assign to the main dictionary
+        campsite_dict[campsite_name] = nested_dict
+    print(f"campsites = {campsite_dict.keys()}")
     count = 0
     total = 0
     already_had = 0
@@ -257,6 +278,24 @@ def update_locations(df, sensitivity, Print=False):
                 print(
                     f"new long = {df.at[index, 'Longitude']}, new lat = {df.at[index, 'Latitude']}"
                 )
+            count += 1
+
+        best_camp_match, camp_score = fuzzy_match(destination, campsite_dict.keys())
+
+        if camp_score >= sensitivity:
+            # if camp_score != 100 and camp_score < 97 and Print:
+            print(f"update! total -> {total}")
+            print(
+                f"original destination = {destination}, best_match = {best_camp_match}, score = {camp_score}"
+            )
+
+            df.at[index, "Latitude"] = campsite_dict[best_camp_match]["Latitude"]
+            df.at[index, "Longitude"] = campsite_dict[best_camp_match]["Longitude"]
+
+            # if camp_score != 100 and camp_score < 97 and Print:
+            print(
+                f"new long = {df.at[index, 'Longitude']}, new lat = {df.at[index, 'Latitude']}"
+            )
             count += 1
 
         if isinstance(row["Latitude"], float) or isinstance(row["Latitude"], int):

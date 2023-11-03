@@ -5,8 +5,7 @@ from utility.util import *
 
 # TODO: fix bug that is causing everything from 30k -> end to uncompleted (maybe it is because of the way I am parsing the data)
 # TODO: Add years 2013 - 2015
-#     - find in google drive
-#     - Cant find
+#       - I found it
 # TODO: add campsites
 # TODO: find katadin
 
@@ -91,6 +90,7 @@ print(
 day = str(datetime.datetime.now().day)
 month = str(datetime.datetime.now().month)
 year = str(datetime.datetime.now().year)
+hour = str(datetime.datetime.now().hour)
 minutes = str(datetime.datetime.now().minute)
 
 merged = merged.rename(columns={"label": "emotional_label"})
@@ -102,7 +102,9 @@ print(
 
 # make a new df with all rows 0 -> 34470 inclusive
 merged = merged.iloc[:34471, :]
-convert_df_to_csv(merged, "mother_data_" + day + "_" + month + "_" + year + "_" + minutes)
+convert_df_to_csv(
+    merged, "mother_data_" + day + "_" + month + "_" + year + "_" + hour + "_" + minutes
+)
 
 
 # print the amount of unique Hiker Journal Links there are
